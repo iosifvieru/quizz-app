@@ -14,6 +14,7 @@ namespace proiect_ip
         [STAThread]
         static void Main()
         {
+            // Comentariu
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Main_Menu());
