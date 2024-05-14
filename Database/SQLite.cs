@@ -15,15 +15,18 @@ using System.Threading.Tasks;
 using System.Data.SQLite;
 using System.Windows.Forms;
 using System.Data;
+
 namespace proiect_ip.Database
 {
-    public class SQLite
+    public class SQLite: IDatabase
     {
         private static SQLite _instance;
         private SQLiteConnection database;
         private SQLite()
         {
             this.database = new SQLiteConnection("Data Source=database.db");
+
+            CreateUserTable();
         }
 
         public static SQLite GetInstance()
@@ -35,6 +38,7 @@ namespace proiect_ip.Database
             return _instance;
         }
 
+        
         // metoda ce creaza tabelul users
         public void CreateUserTable()
         {
