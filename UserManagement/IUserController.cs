@@ -11,6 +11,6 @@ namespace proiect_ip
         bool addUser(User user);
         bool deleteUser(int id);
         bool updateUser(int id, User user);
-        User getUser(int id);
+        User getUser(string username);
     }
 }

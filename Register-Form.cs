@@ -46,11 +46,8 @@ namespace proiect_ip
             } else
             {
                 MessageBox.Show("Contul a fost inregistrat!");
-                
                 // trb. facuta o tranzitie catre form-ul cu Login sau cv.
             }
-            
-            
         }
     }
 }

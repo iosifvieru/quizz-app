@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 
 using System.Data.SQLite;
 using System.Windows.Forms;
+using System.Data;
 namespace proiect_ip.Database
 {
     public class SQLite
@@ -76,6 +77,26 @@ namespace proiect_ip.Database
             return noRowsAffected;
         }
 
+        // metoda pentru SELECT;
+        public DataTable ExecuteQuery(string query)
+        {
+            DataTable dataTable = new DataTable();
+            try
+            {
+                database.Open();
 
+                SQLiteCommand command = new SQLiteCommand(query, database);
+                SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
+                adapter.Fill(dataTable);
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            } finally
+            {
+                database.Close();
+            }
+
+            return dataTable;
+        }
     }
 }

@@ -13,19 +13,41 @@ namespace proiect_ip
 {
     public partial class Main_Menu : Form
     {
+        IUserController userController = new UserController();
+        IEncrypt encrypt = new SHA256Hashing();
+
         public Main_Menu()
         {
-            InitializeComponent();
-
-            UserController userController = new UserController();
-
-            
+            InitializeComponent();            
         }
 
         // functie de callback pt. butonul de log in.
         private void LogInButton_Click(object sender, EventArgs e)
         {
-            
+            if (string.IsNullOrEmpty(UsernameTextBox.Text))
+            {
+                MessageBox.Show("Trebuie sa introduci un nume de utilizator.");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(PasswordTextBox.Text))
+            {
+                MessageBox.Show("Trebuie sa introduci o parola.");
+                return;
+            }
+
+            string username = UsernameTextBox.Text;
+            string password = encrypt.Hash(PasswordTextBox.Text);
+
+            User user = userController.getUser(username);
+
+            //MessageBox.Show(password);
+
+            if((user.Password != password) || user == null)
+            {
+                MessageBox.Show("Numele de utilizator sau parola sunt gresite.");
+                return;
+            }
 
             /*
                ** temporar.

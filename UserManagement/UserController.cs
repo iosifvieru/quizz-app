@@ -8,6 +8,7 @@
 using proiect_ip.Database;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,9 +50,25 @@ namespace proiect_ip
             return true;
         }
 
-        public User getUser(int id)
+        public User getUser(string username)
         {
-            throw new NotImplementedException();
+            string query = "SELECT * FROM users WHERE username='" + username + "'";
+            //MessageBox.Show(query);
+            User user = null;
+
+            DataTable result = database.ExecuteQuery(query);
+
+            if(result.Rows.Count > 0)
+            {
+                DataRow row = result.Rows[0];
+                user = new User(Convert.ToInt32(row["id"]), row["username"].ToString(), row["password"].ToString());
+                ///MessageBox.Show(user.Password);
+            } else
+            {
+                MessageBox.Show("tyres");
+            }
+
+            return user;
         }
 
         public bool updateUser(int id, User user)
@@ -63,7 +80,7 @@ namespace proiect_ip
 
 
             string query = "UPDATE users SET username=" + username + ", " */
-            throw new NotImplementedException();
+            return true;
         }
     }
 }
