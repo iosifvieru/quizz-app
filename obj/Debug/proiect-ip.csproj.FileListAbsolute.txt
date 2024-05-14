@@ -12,11 +12,11 @@ C:\Users\tero\Desktop\proiect-ip\quizz-app\bin\Debug\proiect-ip.exe.config
 C:\Users\tero\Desktop\proiect-ip\quizz-app\bin\Debug\proiect-ip.exe
 C:\Users\tero\Desktop\proiect-ip\quizz-app\bin\Debug\proiect-ip.pdb
 C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect-ip.csproj.AssemblyReference.cache
+C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect_ip.Main_Menu.resources
+C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect_ip.Quizz.resources
 C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect_ip.Properties.Resources.resources
+C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect_ip.Register_Form.resources
 C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect-ip.csproj.GenerateResource.cache
 C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect-ip.csproj.CoreCompileInputs.cache
 C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect-ip.exe
 C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect-ip.pdb
-C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect_ip.main_menu.resources
-C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect_ip.Quizz.resources
-C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect_ip.Register_Form.resources
