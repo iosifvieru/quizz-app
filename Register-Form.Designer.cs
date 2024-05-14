@@ -30,11 +30,9 @@
         {
             this.UsernameTextBox = new System.Windows.Forms.TextBox();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
-            this.EmailTextBox = new System.Windows.Forms.TextBox();
             this.RegisterButton = new System.Windows.Forms.Button();
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.PasswordLabel = new System.Windows.Forms.Label();
-            this.EmailLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // UsernameTextBox
@@ -52,21 +50,15 @@
             this.PasswordTextBox.Size = new System.Drawing.Size(137, 20);
             this.PasswordTextBox.TabIndex = 1;
             // 
-            // EmailTextBox
-            // 
-            this.EmailTextBox.Location = new System.Drawing.Point(305, 211);
-            this.EmailTextBox.Name = "EmailTextBox";
-            this.EmailTextBox.Size = new System.Drawing.Size(137, 20);
-            this.EmailTextBox.TabIndex = 2;
-            // 
             // RegisterButton
             // 
-            this.RegisterButton.Location = new System.Drawing.Point(336, 254);
+            this.RegisterButton.Location = new System.Drawing.Point(331, 208);
             this.RegisterButton.Name = "RegisterButton";
             this.RegisterButton.Size = new System.Drawing.Size(75, 23);
             this.RegisterButton.TabIndex = 3;
             this.RegisterButton.Text = "Register";
             this.RegisterButton.UseVisualStyleBackColor = true;
+            this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
             // 
             // UsernameLabel
             // 
@@ -86,25 +78,14 @@
             this.PasswordLabel.TabIndex = 5;
             this.PasswordLabel.Text = "Password:";
             // 
-            // EmailLabel
-            // 
-            this.EmailLabel.AutoSize = true;
-            this.EmailLabel.Location = new System.Drawing.Point(307, 195);
-            this.EmailLabel.Name = "EmailLabel";
-            this.EmailLabel.Size = new System.Drawing.Size(35, 13);
-            this.EmailLabel.TabIndex = 6;
-            this.EmailLabel.Text = "Email:";
-            // 
             // Register_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.EmailLabel);
             this.Controls.Add(this.PasswordLabel);
             this.Controls.Add(this.UsernameLabel);
             this.Controls.Add(this.RegisterButton);
-            this.Controls.Add(this.EmailTextBox);
             this.Controls.Add(this.PasswordTextBox);
             this.Controls.Add(this.UsernameTextBox);
             this.Name = "Register_Form";
@@ -118,10 +99,8 @@
 
         private System.Windows.Forms.TextBox UsernameTextBox;
         private System.Windows.Forms.TextBox PasswordTextBox;
-        private System.Windows.Forms.TextBox EmailTextBox;
         private System.Windows.Forms.Button RegisterButton;
         private System.Windows.Forms.Label UsernameLabel;
         private System.Windows.Forms.Label PasswordLabel;
-        private System.Windows.Forms.Label EmailLabel;
     }
 }

@@ -16,3 +16,7 @@ C:\Users\tero\Desktop\proiect-ip\quizz-app\Tests\UnitTestSHA256\bin\Debug\Micros
 C:\Users\tero\Desktop\proiect-ip\quizz-app\Tests\UnitTestSHA256\obj\Debug\UnitTest.CD79ACAC.Up2Date
 C:\Users\tero\Desktop\proiect-ip\quizz-app\Tests\UnitTestSHA256\obj\Debug\UnitTestSHA256.dll
 C:\Users\tero\Desktop\proiect-ip\quizz-app\Tests\UnitTestSHA256\obj\Debug\UnitTestSHA256.pdb
+C:\Users\tero\Desktop\proiect-ip\quizz-app\Tests\UnitTestSHA256\bin\Debug\x86\sqlite3.dll
+C:\Users\tero\Desktop\proiect-ip\quizz-app\Tests\UnitTestSHA256\bin\Debug\x64\sqlite3.dll
+C:\Users\tero\Desktop\proiect-ip\quizz-app\Tests\UnitTestSHA256\bin\Debug\System.Data.SQLite.dll
+C:\Users\tero\Desktop\proiect-ip\quizz-app\Tests\UnitTestSHA256\bin\Debug\System.Data.SQLite.xml

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using proiect_ip;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,10 @@ namespace proiect_ip
         public Main_Menu()
         {
             InitializeComponent();
+
+            UserController userController = new UserController();
+
+            
         }
 
         // functie de callback pt. butonul de log in.

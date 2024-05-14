@@ -20,3 +20,14 @@ C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect-ip.csproj.GenerateR
 C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect-ip.csproj.CoreCompileInputs.cache
 C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect-ip.exe
 C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect-ip.pdb
+C:\Users\tero\Desktop\proiect-ip\quizz-app\bin\Debug\x86\sqlite3.dll
+C:\Users\tero\Desktop\proiect-ip\quizz-app\bin\Debug\x64\sqlite3.dll
+C:\Users\tero\Desktop\proiect-ip\quizz-app\bin\Debug\EntityFramework.dll
+C:\Users\tero\Desktop\proiect-ip\quizz-app\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\tero\Desktop\proiect-ip\quizz-app\bin\Debug\System.Data.SQLite.dll
+C:\Users\tero\Desktop\proiect-ip\quizz-app\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\tero\Desktop\proiect-ip\quizz-app\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\tero\Desktop\proiect-ip\quizz-app\bin\Debug\EntityFramework.xml
+C:\Users\tero\Desktop\proiect-ip\quizz-app\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\tero\Desktop\proiect-ip\quizz-app\bin\Debug\System.Data.SQLite.xml
+C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect-ip.csproj.Up2Date
