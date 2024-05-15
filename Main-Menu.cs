@@ -36,11 +36,11 @@ namespace proiect_ip
                 return;
             }
 
-            string username = UsernameTextBox.Text;
+            
+            string username = UsernameTextBox.Text.ToLower();
             string password = encrypt.Hash(PasswordTextBox.Text);
 
             User user = userController.getUser(username);
-
             //MessageBox.Show(password);
 
             if((user.Password != password) || user == null)
@@ -49,10 +49,6 @@ namespace proiect_ip
                 return;
             }
 
-            /*
-               ** temporar.
-               strict de test pt. a testa functionalitatea.
-            */
             Quizz test = new Quizz();
 
             // daca fereasta Quizz este inchisa repare fereastra principala.

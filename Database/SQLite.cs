@@ -46,7 +46,7 @@ namespace proiect_ip.Database
             {
                 database.Open();
 
-                string createTableQuery = "CREATE TABLE IF NOT EXISTS users (id INTEGER NOT NULL UNIQUE, username TEXT NOT NULL UNIQUE, password TEXT NOT NULL, PRIMARY KEY(id AUTOINCREMENT))";
+                string createTableQuery = "CREATE TABLE IF NOT EXISTS users (id INTEGER NOT NULL UNIQUE, username TEXT NOT NULL UNIQUE, password TEXT NOT NULL, isAdmin INTEGER, PRIMARY KEY(id AUTOINCREMENT))";
                 SQLiteCommand createTable = new SQLiteCommand(createTableQuery, database);
 
                 createTable.ExecuteNonQuery();
@@ -91,7 +91,9 @@ namespace proiect_ip.Database
 
                 SQLiteCommand command = new SQLiteCommand(query, database);
                 SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
+
                 adapter.Fill(dataTable);
+            
             } catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);

@@ -18,18 +18,16 @@ namespace proiect_ip
 {
     public class UserController : IUserController
     {
-        private SQLite database;
-        public UserController() 
+        private IDatabase database;
+        public UserController()
         {
             this.database = SQLite.GetInstance();
-
-            database.CreateUserTable();
         }
 
         public bool addUser(User user)
         {
             // cer si eu scuze la linia de mai jos.. se mai intampla :(
-            string query = "INSERT INTO users(username, password) VALUES ('" + user.Username + "', '" + user.Password + "')";
+            string query = "INSERT INTO users(username, password, isAdmin) VALUES ('" + user.Username + "', '" + user.Password + "', '" + user.Admin + "')";
 
             int noRowsAffected = database.ExecuteNonQuery(query);
 
@@ -45,8 +43,18 @@ namespace proiect_ip
 
         public bool deleteUser(int id)
         {
-            string query = "DELETE FROM users WHERE id=" + id;
-            database.ExecuteNonQuery(query);
+
+            // DELETE FROM users WHERE id = id;
+            string query = "DELETE FROM users WHERE id='" + id + "'";
+            
+            int noRowsAffected = database.ExecuteNonQuery(query);
+
+            // daca nu s-au modificat nimic in baza de date returneaza false;
+            if(noRowsAffected == 0)
+            {
+                return false;
+            }
+
             return true;
         }
 
@@ -58,14 +66,29 @@ namespace proiect_ip
 
             DataTable result = database.ExecuteQuery(query);
 
+            // poate fi schimbat cu un if(result.Rows.Count <= 0) { }
             if(result.Rows.Count > 0)
             {
+                // practic la nivelul bazei de date se executa un 
+                // SELECT * FROM users WHERE username = username;
+                // teoretic campul username este UNIQUE, deci ar trebui sa existe un singur camp returnat
+                // dar linia de mai jos se asigura ca preia primul camp din "cele" returnate.
                 DataRow row = result.Rows[0];
-                user = new User(Convert.ToInt32(row["id"]), row["username"].ToString(), row["password"].ToString());
-                ///MessageBox.Show(user.Password);
-            } else
-            {
-                MessageBox.Show("tyres");
+
+                // parsarea datelor primite de la db.
+                int id = Convert.ToInt32(row["id"]);
+                string dbUsername = row["username"].ToString();
+                string password = row["password"].ToString();
+                int admin = Convert.ToInt32(row["isAdmin"]);
+
+                //user = new User(Convert.ToInt32(row["id"]), row["username"].ToString(), row["password"].ToString(), Convert.ToInt32(row["isAdmin"]));
+
+                // crearea utilizatorului din datele primite.
+                user = new User(id, dbUsername, password, admin);
+
+                // debugging la drumu mare :))
+                //MessageBox.Show(user.Password);
+                //MessageBox.Show(user.ToString());
             }
 
             return user;
@@ -73,13 +96,20 @@ namespace proiect_ip
 
         public bool updateUser(int id, User user)
         {
-            /*
-            int id = user.ID;
             string username = user.Username;
             string password = user.Password;
 
+            // UPDATE users SET username=username, password=password, isAdmin=admin WHERE id=id;
+            string query = "UPDATE users SET username='" + username + "', password='" + password + "', isAdmin='" + user.Admin + "' WHERE id='" + id + "'";
+            
+            int noRowsAffected = database.ExecuteNonQuery(query);
 
-            string query = "UPDATE users SET username=" + username + ", " */
+            // daca nu s-a modificat nimic in baza de date returneaza false;
+            if(noRowsAffected == 0)
+            {
+                return false;
+            }
+
             return true;
         }
     }

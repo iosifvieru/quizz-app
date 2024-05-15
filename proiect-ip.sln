@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "proiect-ip", "proiect-ip.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestSHA256", "Tests\UnitTestSHA256\UnitTestSHA256.csproj", "{8AA57F80-B3A0-4FFD-9E68-D343ADFFA210}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestUserController", "Tests\UnitTestUserController\UnitTestUserController.csproj", "{76B5ACDD-10EE-4393-91E5-274AEA390026}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8AA57F80-B3A0-4FFD-9E68-D343ADFFA210}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AA57F80-B3A0-4FFD-9E68-D343ADFFA210}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AA57F80-B3A0-4FFD-9E68-D343ADFFA210}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76B5ACDD-10EE-4393-91E5-274AEA390026}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76B5ACDD-10EE-4393-91E5-274AEA390026}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76B5ACDD-10EE-4393-91E5-274AEA390026}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76B5ACDD-10EE-4393-91E5-274AEA390026}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -34,7 +34,10 @@ namespace proiect_ip
                 return;
             }
 
-            string username = UsernameTextBox.Text;
+            // am preferat sa aleg ca username ul sa fie stocat strict lowercase
+            // pt a evita situatiile in care exista username-ul "test" si "Test" 
+            // iar acestea sa fie doua conturi diferite.
+            string username = UsernameTextBox.Text.ToLower();
             string password = encrypt.Hash(PasswordTextBox.Text);
 
             User tempUser = new User(0, username, password);

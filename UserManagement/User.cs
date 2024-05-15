@@ -20,20 +20,45 @@ namespace proiect_ip
         private int _id;
         private string _username;
         private string _password;
+        private int _isAdmin;
 
         public User(int id, string username, string password)
         {
             _id = id;
             _username = username;
             _password = password;
+            _isAdmin = 0;
         }
 
-        public int ID { get; }
+        public User(int id, string username, string password, int admin)
+        {
+            _id = id;
+            _username = username;
+            _password = password;
+            _isAdmin = admin;
+        }
+
+        public int ID { 
+            get => _id; 
+        }
+
         public string Username { 
             get => _username;
         }
+
         public string Password { 
             get => _password; 
+        }
+
+        public int Admin
+        {
+            get => _isAdmin;
+            set => _isAdmin = value;
+        }
+
+        public override string ToString()
+        {
+            return "" + _id + " " + _username + " " + _password + " admin= " + _isAdmin;    
         }
     }
 }

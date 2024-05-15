@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\IDatabase.cs" />
     <Compile Include="Database\SQLite.cs" />
     <Compile Include="Encryption\IEncrypt.cs" />
     <Compile Include="Quizz-Form.cs">
