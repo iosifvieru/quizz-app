@@ -24,21 +24,21 @@ namespace proiect_ip
         // functie de callback pt. butonul de log in.
         private void LogInButton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(UsernameTextBox.Text))
+            if (string.IsNullOrEmpty(bunifuTextBoxMainUsername.Text))
             {
                 MessageBox.Show("Trebuie sa introduci un nume de utilizator.");
                 return;
             }
 
-            if (string.IsNullOrEmpty(PasswordTextBox.Text))
+            if (string.IsNullOrEmpty(bunifuTextBoxMainPassword.Text))
             {
                 MessageBox.Show("Trebuie sa introduci o parola.");
                 return;
             }
 
             
-            string username = UsernameTextBox.Text.ToLower();
-            string password = encrypt.Hash(PasswordTextBox.Text);
+            string username = bunifuTextBoxMainUsername.Text.ToLower();
+            string password = encrypt.Hash(bunifuTextBoxMainPassword.Text);
 
             User user = userController.getUser(username);
             //MessageBox.Show(password);
@@ -68,6 +68,57 @@ namespace proiect_ip
             register.Show();
 
             this.Hide();
+        }
+
+        private void bunifuButton21_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(bunifuTextBoxMainUsername.Text))
+            {
+                MessageBox.Show("Trebuie sa introduci un nume de utilizator.");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(bunifuTextBoxMainPassword.Text))
+            {
+                MessageBox.Show("Trebuie sa introduci o parola.");
+                return;
+            }
+
+
+            string username = bunifuTextBoxMainUsername.Text.ToLower();
+            string password = encrypt.Hash(bunifuTextBoxMainPassword.Text);
+
+            User user = userController.getUser(username);
+            //MessageBox.Show(password);
+
+            if ((user.Password != password) || user == null)
+            {
+                MessageBox.Show("Numele de utilizator sau parola sunt gresite.");
+                return;
+            }
+
+            Quizz test = new Quizz();
+
+            // daca fereasta Quizz este inchisa repare fereastra principala.
+            test.FormClosed += (s, args) => this.Show();
+            test.Show();
+
+            // ascunde ferastra curenta.
+            this.Hide();
+        }
+
+        private void bunifuButton22_Click(object sender, EventArgs e)
+        {
+            Register_Form register = new Register_Form();
+            register.FormClosed += (s, args) => this.Show();
+            register.Show();
+
+            this.Hide();
+        }
+
+        private void bunifuPanel1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
