@@ -27,6 +27,9 @@ namespace proiect_ip.Database
             this.database = new SQLiteConnection("Data Source=database.db");
 
             CreateUserTable();
+            CreateQuizesTable();
+            CreateQuestionsTable();
+            CreateAnswersTable();
         }
 
         public static SQLite GetInstance()
@@ -55,6 +58,75 @@ namespace proiect_ip.Database
             {
                 Console.WriteLine(e.Message);
             } finally
+            {
+                database.Close();
+            }
+        }
+
+        // Metoda ce creaza tabelul quiz
+        public void CreateQuizesTable()
+        {
+            try
+            {
+                database.Open();
+
+                string createTableQuery = "CREATE TABLE IF NOT EXISTS quiz (id INTEGER NOT NULL UNIQUE, title TEXT NOT NULL UNIQUE, isVisible INTEGER, PRIMARY KEY(id AUTOINCREMENT))";
+                SQLiteCommand createTable = new SQLiteCommand(createTableQuery, database);
+
+                createTable.ExecuteNonQuery();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                database.Close();
+            }
+        }
+
+        // Metoda ce creaza tabelul question
+        public void CreateQuestionsTable()
+        {
+            try
+            {
+                database.Open();
+
+                string createTableQuery = "CREATE TABLE IF NOT EXISTS question (id INTEGER NOT NULL UNIQUE, quizId INTEGER NOT NULL, question TEXT NOT NULL, score INTEGER NOT NULL, PRIMARY KEY(id AUTOINCREMENT), FOREIGN KEY (quizId) REFERENCES quiz(id))";
+                SQLiteCommand createTable = new SQLiteCommand(createTableQuery, database);
+
+                createTable.ExecuteNonQuery();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                database.Close();
+            }
+        }
+
+        // Metoda ce creaza tabelul answer
+        public void CreateAnswersTable()
+        {
+            try
+            {
+                database.Open();
+
+                string createTableQuery = "CREATE TABLE IF NOT EXISTS answer (id INTEGER NOT NULL UNIQUE, questionId INTEGER NOT NULL, answer TEXT NOT NULL, isCorrect INTEGER, PRIMARY KEY(id AUTOINCREMENT), FOREIGN KEY (questionId) REFERENCES question(id))";
+                SQLiteCommand createTable = new SQLiteCommand(createTableQuery, database);
+
+                createTable.ExecuteNonQuery();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
             {
                 database.Close();
             }
