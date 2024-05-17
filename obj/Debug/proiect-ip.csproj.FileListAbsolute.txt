@@ -36,13 +36,6 @@ C:\Users\admin\quizz-app\bin\Debug\x64\sqlite3.dll
 C:\Users\admin\quizz-app\bin\Debug\proiect-ip.exe.config
 C:\Users\admin\quizz-app\bin\Debug\proiect-ip.exe
 C:\Users\admin\quizz-app\bin\Debug\proiect-ip.pdb
-C:\Users\admin\quizz-app\bin\Debug\Bunifu.Licensing.dll
-C:\Users\admin\quizz-app\bin\Debug\Bunifu.UI.WinForms.dll
-C:\Users\admin\quizz-app\bin\Debug\EntityFramework.dll
-C:\Users\admin\quizz-app\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\admin\quizz-app\bin\Debug\System.Data.SQLite.dll
-C:\Users\admin\quizz-app\bin\Debug\System.Data.SQLite.EF6.dll
-C:\Users\admin\quizz-app\bin\Debug\System.Data.SQLite.Linq.dll
 C:\Users\admin\quizz-app\bin\Debug\Bunifu.UI.WinForms.xml
 C:\Users\admin\quizz-app\bin\Debug\EntityFramework.xml
 C:\Users\admin\quizz-app\bin\Debug\EntityFramework.SqlServer.xml
@@ -58,3 +51,5 @@ C:\Users\admin\quizz-app\obj\Debug\proiect-ip.csproj.CoreCompileInputs.cache
 C:\Users\admin\quizz-app\obj\Debug\proiect-ip.csproj.CopyComplete
 C:\Users\admin\quizz-app\obj\Debug\proiect-ip.exe
 C:\Users\admin\quizz-app\obj\Debug\proiect-ip.pdb
+C:\Users\admin\quizz-app\bin\Debug\Microsoft.VisualStudio.TestTools.UITest.Extension.dll
+C:\Users\admin\quizz-app\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll

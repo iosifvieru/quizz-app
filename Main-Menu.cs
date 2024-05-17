@@ -16,6 +16,8 @@ namespace proiect_ip
         IUserController userController = new UserController();
         IEncrypt encrypt = new SHA256Hashing();
 
+        private static Register_Form registerForm;
+
         public Main_Menu()
         {
             InitializeComponent();            
@@ -107,18 +109,35 @@ namespace proiect_ip
             this.Hide();
         }
 
-        private void bunifuButton22_Click(object sender, EventArgs e)
-        {
-            Register_Form register = new Register_Form();
-            register.FormClosed += (s, args) => this.Show();
-            register.Show();
+      
 
-            this.Hide();
+        private void bunifuButtonMainInregistrare_Click(object sender, EventArgs e)
+        {
+            // this.Hide();
+
+            // Register_Form register=null;
+            //  register.FormClosed += (s, args) => this.Show();
+            //  register.Show();
+
+
+            SwitchToMainMenu();
+
+        }
+        private void Main_Menu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
 
-        private void bunifuPanel1_Click(object sender, EventArgs e)
-        {
 
+        private void SwitchToMainMenu()
+        {
+            if (registerForm == null)
+            {
+                registerForm = new Register_Form();
+                registerForm.FormClosed += (s, args) => { registerForm = null; this.Show(); };
+            }
+            this.Hide();
+            registerForm.Show();
         }
     }
 }

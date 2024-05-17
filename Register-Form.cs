@@ -15,6 +15,8 @@ namespace proiect_ip
     {
         public IUserController userController = new UserController();
         public IEncrypt encrypt = new SHA256Hashing();
+
+        private static Main_Menu mainMenuForm;
         public Register_Form()
         {
             InitializeComponent();
@@ -22,13 +24,18 @@ namespace proiect_ip
 
         private void RegisterButton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(UsernameTextBox.Text))
+          
+        }
+
+        private void bunifuButtonRegister_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(bunifuTextBoxRegisterUsername.Text))
             {
                 MessageBox.Show("Trebuie sa introduci un nume de utilizator.");
                 return;
             }
 
-            if(string.IsNullOrEmpty(PasswordTextBox.Text))
+            if (string.IsNullOrEmpty(bunifuTextBoxRegisterPassword.Text))
             {
                 MessageBox.Show("Trebuie sa introduci o parola.");
                 return;
@@ -37,20 +44,53 @@ namespace proiect_ip
             // am preferat sa aleg ca username ul sa fie stocat strict lowercase
             // pt a evita situatiile in care exista username-ul "test" si "Test" 
             // iar acestea sa fie doua conturi diferite.
-            string username = UsernameTextBox.Text.ToLower();
-            string password = encrypt.Hash(PasswordTextBox.Text);
+            string username = bunifuTextBoxRegisterUsername.Text.ToLower();
+            string password = encrypt.Hash(bunifuTextBoxRegisterPassword.Text);
 
             User tempUser = new User(0, username, password);
             bool returnVal = userController.addUser(tempUser);
-            
-            if(returnVal == false)
+
+            if (returnVal == false)
             {
                 MessageBox.Show("Numele de utilizator este deja folosit!");
-            } else
+            }
+            else
             {
                 MessageBox.Show("Contul a fost inregistrat!");
                 // trb. facuta o tranzitie catre form-ul cu Login sau cv.
             }
+
+        }
+
+        private void bunifuButtonRegisterAutentificare_Click(object sender, EventArgs e)
+        {
+            // this.Hide();
+            //  Main_Menu mainMenu = new Main_Menu();
+            //  mainMenu.FormClosed += (s, args) => this.Show();
+            //  mainMenu.Show();
+
+            SwitchToMainMenu();
+
+
+        }
+
+        private void Register_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+           
+            
+        }
+
+
+        private void SwitchToMainMenu()
+        {
+            if (mainMenuForm == null)
+            {
+                mainMenuForm = new Main_Menu();
+                mainMenuForm.FormClosed += (s, args) => { mainMenuForm = null; this.Show(); };
+            }
+            this.Hide();
+            mainMenuForm.Show();
         }
     }
 }
