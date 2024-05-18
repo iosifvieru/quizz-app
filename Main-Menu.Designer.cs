@@ -502,7 +502,7 @@
             this.MaximizeBox = false;
             this.Name = "Main_Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Quizz App";
+            this.Text = "QuizForm App";
             this.bunifuPanel1.ResumeLayout(false);
             this.bunifuPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).EndInit();

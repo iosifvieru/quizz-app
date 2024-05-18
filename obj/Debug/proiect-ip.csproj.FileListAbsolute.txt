@@ -2,7 +2,6 @@ D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\bin\Debug\proiect-ip.exe
 D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\bin\Debug\proiect-ip.exe
 D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\bin\Debug\proiect-ip.pdb
 D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\obj\Debug\proiect-ip.csproj.AssemblyReference.cache
-D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\obj\Debug\proiect_ip.Form1.resources
 D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\obj\Debug\proiect_ip.Properties.Resources.resources
 D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\obj\Debug\proiect-ip.csproj.GenerateResource.cache
 D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\obj\Debug\proiect-ip.csproj.CoreCompileInputs.cache
@@ -53,3 +52,15 @@ C:\Users\admin\quizz-app\obj\Debug\proiect-ip.exe
 C:\Users\admin\quizz-app\obj\Debug\proiect-ip.pdb
 C:\Users\admin\quizz-app\bin\Debug\Microsoft.VisualStudio.TestTools.UITest.Extension.dll
 C:\Users\admin\quizz-app\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\bin\Debug\x86\sqlite3.dll
+D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\bin\Debug\x64\sqlite3.dll
+D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\bin\Debug\Bunifu.UI.WinForms.xml
+D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\bin\Debug\EntityFramework.xml
+D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\bin\Debug\System.Data.SQLite.xml
+D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\obj\Debug\proiect_ip.Main_Menu.resources
+D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\obj\Debug\proiect_ip.Register_Form.resources
+D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\obj\Debug\proiect-ip.exe.licenses
+D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\obj\Debug\proiect-ip.csproj.Up2Date
+D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\obj\Debug\proiect_ip.QuizForm.resources

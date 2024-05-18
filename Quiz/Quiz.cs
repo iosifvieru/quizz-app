@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace proiect_ip.Quiz
 {
@@ -20,7 +21,7 @@ namespace proiect_ip.Quiz
         private int _currentQuestion;
 
 
-        public Quiz(int quizId, string quizName, int score = 0, int maxScore = 100, bool isVisible = false)
+        public Quiz(int quizId, string quizName, bool isVisible = false, int score = 0, int maxScore = 100)
         {
             _quizId = quizId;
             _quizName = quizName;
@@ -32,9 +33,12 @@ namespace proiect_ip.Quiz
             _quizState = new QuizNotStartedState();
         }
 
+        public String GetTitle { get => _quizName; }
         public int GetScore { get => _score; }
         public int GetMaxScore { get => _maxScore;}
         public bool IsVisible { get => _isVisible;}
+
+        public int GetCurrentQuestionNumber { get => _currentQuestion;}
 
         public List<Question> GetQuestions { get => _questions; }
 
@@ -51,6 +55,39 @@ namespace proiect_ip.Quiz
         public void setState(IQuizState newState)
         {
             _quizState = newState;
+        }
+
+        public void SetQuestions(List<Question> questions)
+        {
+            _questions = questions;
+        }
+
+        public void OpenQuiz(QuizForm quizForm)
+        {
+            _quizState.OpenQuiz(this,quizForm);
+        }
+
+        public void ShowQuestion(QuizForm quizForm)
+        {
+            _quizState.ShowQuestion(this, quizForm);
+        }
+
+        public void NextQuestion(QuizForm quizForm)
+        {
+            if(_currentQuestion < _questions.Count)
+            {
+                _currentQuestion++;
+                _quizState.ShowQuestion(this, quizForm);
+            }
+        }
+
+        public void PreviousQuestion(QuizForm quizForm)
+        {
+            if (_currentQuestion > 0)
+            {
+                _currentQuestion--;
+                _quizState.ShowQuestion(this, quizForm);
+            }
         }
     }
 }
