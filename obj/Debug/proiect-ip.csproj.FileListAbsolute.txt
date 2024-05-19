@@ -64,3 +64,4 @@ D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\obj\Debug\proiect_ip.Reg
 D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\obj\Debug\proiect-ip.exe.licenses
 D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\obj\Debug\proiect-ip.csproj.Up2Date
 D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\obj\Debug\proiect_ip.QuizForm.resources
+D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\obj\Debug\proiect_ip.QuizzesListForm.resources
