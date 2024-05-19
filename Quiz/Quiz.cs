@@ -33,6 +33,7 @@ namespace proiect_ip.Quiz
             _quizState = new QuizNotStartedState();
         }
 
+        public int GetQuizId {  get { return _quizId; } }
         public String GetTitle { get => _quizName; }
         public int GetScore { get => _score; }
         public int GetMaxScore { get => _maxScore;}

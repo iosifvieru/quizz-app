@@ -16,13 +16,13 @@ namespace proiect_ip
         private QuizController _quizController;
         private Quiz.Quiz _quiz;
 
-        public QuizForm()
+        public QuizForm(int quizId)
         {
             InitializeComponent();
             _quizController = new QuizController();
 
-            _quiz = _quizController.GetQuiz(1);
-            _quiz.SetQuestions(_quizController.GetQuizQuestions(1));
+            _quiz = _quizController.GetQuiz(quizId);
+            _quiz.SetQuestions(_quizController.GetQuizQuestions(quizId));
 
             _quiz.OpenQuiz(this);
         }
@@ -46,7 +46,7 @@ namespace proiect_ip
 
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
-
+            throw new NotImplementedException();
         }
     }
 }

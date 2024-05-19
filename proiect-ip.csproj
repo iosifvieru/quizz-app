@@ -78,11 +78,17 @@
     <Compile Include="Database\SQLite.cs" />
     <Compile Include="Encryption\IEncrypt.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
-    <Compile Include="Quizz-Form.cs">
+    <Compile Include="QuizzesListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Quizz-Form.Designer.cs">
-      <DependentUpon>Quizz-Form.cs</DependentUpon>
+    <Compile Include="QuizzesListForm.Designer.cs">
+      <DependentUpon>QuizzesListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuizForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuizForm.Designer.cs">
+      <DependentUpon>QuizForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Main-Menu.cs">
       <SubType>Form</SubType>
@@ -115,11 +121,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\proiect_ip.Main_Menu.resources" />
     <EmbeddedResource Include="obj\Debug\proiect_ip.Properties.Resources.resources" />
-    <EmbeddedResource Include="obj\Debug\proiect_ip.Quizz.resources" />
     <EmbeddedResource Include="obj\Debug\proiect_ip.Register_Form.resources" />
     <EmbeddedResource Include="Properties\licenses.licx" />
-    <EmbeddedResource Include="Quizz-Form.resx">
-      <DependentUpon>Quizz-Form.cs</DependentUpon>
+    <EmbeddedResource Include="QuizzesListForm.resx">
+      <DependentUpon>QuizzesListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuizForm.resx">
+      <DependentUpon>QuizForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

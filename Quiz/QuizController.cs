@@ -21,6 +21,34 @@ namespace proiect_ip.Quiz
             _database = SQLite.GetInstance();
         }
 
+        public List<Quiz> GetAllQuizzes()
+        {
+            string query = "SELECT * FROM quiz";
+            List<Quiz> quizzesList = new List<Quiz>();
+
+            DataTable result = _database.ExecuteQuery(query);
+
+            if (result.Rows.Count > 0)
+            {
+                foreach (DataRow row in result.Rows)
+                {
+                    int id = Convert.ToInt32(row["id"]);
+                    string title = row["title"].ToString();
+
+
+                    bool isVisible = false;
+                    if (row["isVisible"] != DBNull.Value)
+                    {
+                        isVisible = true;
+                    }
+
+                    quizzesList.Add( new Quiz(id, title, isVisible));
+                }
+            }
+
+            return quizzesList;
+        }
+
         public Quiz GetQuiz(int quizId)
         {
             string query = "SELECT * FROM quiz WHERE id='" + quizId + "'";

@@ -11,6 +11,7 @@ namespace proiect_ip.Quiz.States
         public void OpenQuiz(Quiz quiz, QuizForm quizForm)
         {
             // deschide quiz-ul in modul review?
+            // nu porneste instanta de timer
         }
 
         public void ShowQuestion(Quiz quiz, QuizForm quizForm)
