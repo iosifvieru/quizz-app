@@ -18,6 +18,7 @@ namespace proiect_ip.Quiz
         private int _maxScore;
         private bool _isVisible;
         private List<Question> _questions;
+        private List<int> _userAnswers;
         private int _currentQuestion;
 
 
@@ -61,6 +62,14 @@ namespace proiect_ip.Quiz
         public void SetQuestions(List<Question> questions)
         {
             _questions = questions;
+            if (_questions.Count() > 0)
+            {
+                _userAnswers = new List<int>();
+                for (int i = 0; i < _questions.Count(); i++)
+                {
+                    _userAnswers.Add(-1);
+                }
+            }
         }
 
         public void OpenQuiz(QuizForm quizForm)
@@ -89,6 +98,16 @@ namespace proiect_ip.Quiz
                 _currentQuestion--;
                 _quizState.ShowQuestion(this, quizForm);
             }
+        }
+
+        public int GetUserAnswer(int questionId)
+        {
+            return _userAnswers[questionId];
+        }
+
+        public void SetUserAnswer(int questionId, int answer)
+        {
+            _userAnswers[questionId] = answer;
         }
     }
 }

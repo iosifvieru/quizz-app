@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace proiect_ip.Quiz.States
 {
@@ -17,6 +18,11 @@ namespace proiect_ip.Quiz.States
         public void ShowQuestion(Quiz quiz, QuizForm quizForm)
         {
             // to be implemented
+        }
+
+        public void ClickButton(object sender, EventArgs e, Quiz quiz)
+        {
+            //
         }
     }
 }
