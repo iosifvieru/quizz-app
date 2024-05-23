@@ -128,6 +128,20 @@ namespace proiect_ip.Quiz
             return questions;
         }
 
+        public bool EditQuizQuestion(int quizId, Question question)
+        {
+            string query = "UPDATE question SET question='"+ question.GetQuestion + "' WHERE id='"+ question.ID +"'";
+
+            _database.ExecuteNonQuery(query);
+
+            foreach(Answer answer in question.GetAnswers) {
+                string answerQuery = "UPDATE answer SET answer='" + answer.GetAnswerText + "' WHERE id='" + answer.ID + "'";
+                _database.ExecuteNonQuery(answerQuery);
+            }
+
+            return true;
+        }
+
         // To be inplemented
 
         // Instantiem un sqlite

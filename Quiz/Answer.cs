@@ -20,6 +20,9 @@ namespace proiect_ip.Quiz
         }
 
         public String GetAnswerText { get => _answer; }
+        public String SetAnswerText { set => _answer = value; }
+
+        public int ID { get => _id; }
         public bool IsCorrect { get => _isCorrect; }
     }
 }

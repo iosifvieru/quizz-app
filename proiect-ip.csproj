@@ -74,6 +74,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel.Designer.cs">
+      <DependentUpon>AdminPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Database\IDatabase.cs" />
     <Compile Include="Database\SQLite.cs" />
     <Compile Include="Encryption\IEncrypt.cs" />
@@ -116,6 +122,9 @@
     <Compile Include="UserManagement\IUserController.cs" />
     <Compile Include="UserManagement\User.cs" />
     <Compile Include="UserManagement\UserController.cs" />
+    <EmbeddedResource Include="AdminPanel.resx">
+      <DependentUpon>AdminPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main-Menu.resx">
       <DependentUpon>Main-Menu.cs</DependentUpon>
     </EmbeddedResource>

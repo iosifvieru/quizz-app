@@ -51,7 +51,7 @@ namespace proiect_ip
                 return;
             }
 
-            QuizzesListForm test = new QuizzesListForm();
+            QuizzesListForm test = new QuizzesListForm(user);
 
             // daca fereasta Quizz este inchisa repare fereastra principala.
             test.FormClosed += (s, args) => this.Show();
@@ -99,7 +99,7 @@ namespace proiect_ip
                 return;
             }
 
-            QuizzesListForm test = new QuizzesListForm();
+            QuizzesListForm test = new QuizzesListForm(user);
 
             // daca fereasta Quizz este inchisa repare fereastra principala.
             test.FormClosed += (s, args) => this.Show();

@@ -16,8 +16,9 @@ namespace proiect_ip
         private QuizController _quizController;
         private List<Quiz.Quiz> _quizzes;
         private ListViewItem _selectedItem;
+        private User _user;
 
-        public QuizzesListForm()
+        public QuizzesListForm(User user)
         {
             InitializeComponent();
 
@@ -25,6 +26,15 @@ namespace proiect_ip
             _quizzes = _quizController.GetAllQuizzes();
 
             InitializeListView();
+            
+            _user = user;
+
+            // daca flagul isAdmin este != 0 at. utilizatorul este admininstrator.
+            if(_user.Admin == 0)
+            {
+                ButtonAdmin.Enabled = false;
+                ButtonAdmin.Visible = false;
+            }
         }
 
         private void InitializeListView()
@@ -86,6 +96,23 @@ namespace proiect_ip
             }
             else
                 MessageBox.Show("Trebuie sa selectezi un quiz!");
+        }
+
+        private void ButtonAdmin_Click(object sender, EventArgs e)
+        {
+            
+            if(_user.Admin == 0)
+            {
+                MessageBox.Show("Nu esti administrator");
+                return;
+            }
+
+            AdminPanel adminPanelForm = new AdminPanel(_quizzes);
+
+            adminPanelForm.FormClosed += (s, args) => this.Show();
+            adminPanelForm.Show();
+
+            this.Hide();
         }
     }
 }

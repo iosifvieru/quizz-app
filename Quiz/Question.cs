@@ -22,8 +22,14 @@ namespace proiect_ip.Quiz
         }
 
         public String GetQuestion { get => _question; } 
+        public int ID { get => _id; }
         public List<Answer> GetAnswers { get => _answers; } // vedem daca facem asa
 
         public int GetScore { get => _score;}
+
+        public String SetQuestion { set => _question = value; }
+
+
+
     }
 }

@@ -12,7 +12,6 @@ C:\Users\tero\Desktop\proiect-ip\quizz-app\bin\Debug\proiect-ip.exe
 C:\Users\tero\Desktop\proiect-ip\quizz-app\bin\Debug\proiect-ip.pdb
 C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect-ip.csproj.AssemblyReference.cache
 C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect_ip.Main_Menu.resources
-C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect_ip.Quizz.resources
 C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect_ip.Properties.Resources.resources
 C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect_ip.Register_Form.resources
 C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect-ip.csproj.GenerateResource.cache
@@ -21,11 +20,6 @@ C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect-ip.exe
 C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect-ip.pdb
 C:\Users\tero\Desktop\proiect-ip\quizz-app\bin\Debug\x86\sqlite3.dll
 C:\Users\tero\Desktop\proiect-ip\quizz-app\bin\Debug\x64\sqlite3.dll
-C:\Users\tero\Desktop\proiect-ip\quizz-app\bin\Debug\EntityFramework.dll
-C:\Users\tero\Desktop\proiect-ip\quizz-app\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\tero\Desktop\proiect-ip\quizz-app\bin\Debug\System.Data.SQLite.dll
-C:\Users\tero\Desktop\proiect-ip\quizz-app\bin\Debug\System.Data.SQLite.EF6.dll
-C:\Users\tero\Desktop\proiect-ip\quizz-app\bin\Debug\System.Data.SQLite.Linq.dll
 C:\Users\tero\Desktop\proiect-ip\quizz-app\bin\Debug\EntityFramework.xml
 C:\Users\tero\Desktop\proiect-ip\quizz-app\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\tero\Desktop\proiect-ip\quizz-app\bin\Debug\System.Data.SQLite.xml
@@ -65,3 +59,9 @@ D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\obj\Debug\proiect-ip.exe
 D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\obj\Debug\proiect-ip.csproj.Up2Date
 D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\obj\Debug\proiect_ip.QuizForm.resources
 D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\obj\Debug\proiect_ip.QuizzesListForm.resources
+C:\Users\tero\Desktop\proiect-ip\quizz-app\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\tero\Desktop\proiect-ip\quizz-app\bin\Debug\Bunifu.UI.WinForms.xml
+C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect_ip.QuizzesListForm.resources
+C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect_ip.QuizForm.resources
+C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect-ip.exe.licenses
+C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect_ip.AdminPanel.resources

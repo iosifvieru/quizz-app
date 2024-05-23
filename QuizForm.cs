@@ -15,6 +15,7 @@ namespace proiect_ip
     {
         private QuizController _quizController;
         private Quiz.Quiz _quiz;
+        private uint _timp_scurs = 0;
 
         public QuizForm(int quizId)
         {
@@ -25,9 +26,9 @@ namespace proiect_ip
             _quiz.SetQuestions(_quizController.GetQuizQuestions(quizId));
 
             _quiz.OpenQuiz(this);
+
+            TimerTimpScurs.Enabled = true;
         }
-
-
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -49,5 +50,18 @@ namespace proiect_ip
             throw new NotImplementedException();
         }
 
+        private void TimerTimpScurs_Tick(object sender, EventArgs e)
+        {
+            _timp_scurs += 1;
+            TimpQuizz.Text = "Time Left: " + ConvertToMinutes(_timp_scurs);
+        }
+
+        private static string ConvertToMinutes(uint seconds)
+        {
+            uint minute = seconds / 60;
+            uint secunde = seconds % 60;
+
+            return $"{minute:D2}:{secunde:D2}";
+        }
     }
 }
