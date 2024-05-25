@@ -9,20 +9,37 @@ namespace proiect_ip.Quiz.States
 {
     public class QuizNotStartedState : IQuizState
     {
-        public void OpenQuiz(Quiz quiz, QuizForm quizForm)
-        {
-            quiz.setState(new QuizInProgressState());
-            quiz.ShowQuestion(quizForm);
-        }
+        private Quiz _quiz;
+        private QuizForm _form;
 
-        public void ShowQuestion(Quiz quiz, QuizForm quizForm)
+        public void OpenQuiz(Quiz quiz, QuizForm quizForm, QuizController quizController)
+        {
+            _quiz = quiz;
+            _form = quizForm;
+
+            quizForm.TimerTimpScurs.Enabled = true;
+
+            _quiz.SetState(new QuizInProgressState());
+            _quiz.OpenQuiz(quizForm, quizController);
+            _quiz.ShowQuestion();
+    }
+
+        public void ShowQuestion()
         {
             // to be implemented
         }
 
-        public void ClickButton(object sender, EventArgs e, Quiz quiz)
+        public void ClickButton(object sender, EventArgs e)
         {
             //
         }
+
+        public void SubmitAnswers()
+        {
+
+        }
+
+
+        
     }
 }

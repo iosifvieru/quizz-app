@@ -20,7 +20,8 @@ namespace proiect_ip.Quiz
         private List<Question> _questions;
         private List<int> _userAnswers;
         private int _currentQuestion;
-
+        private int _quizTime;
+        private int _userId;
 
         public Quiz(int quizId, string quizName, bool isVisible = false, int score = 0, int maxScore = 100)
         {
@@ -31,7 +32,7 @@ namespace proiect_ip.Quiz
             _isVisible = isVisible;
             _questions = new List<Question>();
             _currentQuestion = 0;
-            _quizState = new QuizNotStartedState();
+            _quizTime = 0;
         }
 
         public int GetQuizId {  get { return _quizId; } }
@@ -44,17 +45,17 @@ namespace proiect_ip.Quiz
 
         public List<Question> GetQuestions { get => _questions; }
 
-        public String getQuestion()
+        public Question GetQuestion()
         {
-            return _questions[_currentQuestion].GetQuestion;
+            return _questions[_currentQuestion];
         }
 
-        public List<Answer> getAnswers()
+        public List<Answer> GetAnswers()
         {
             return _questions[_currentQuestion].GetAnswers;
         }
 
-        public void setState(IQuizState newState)
+        public void SetState(IQuizState newState)
         {
             _quizState = newState;
         }
@@ -72,32 +73,37 @@ namespace proiect_ip.Quiz
             }
         }
 
-        public void OpenQuiz(QuizForm quizForm)
+        public void OpenQuiz(QuizForm quizForm, QuizController quizController)
         {
-            _quizState.OpenQuiz(this,quizForm);
+            _quizState.OpenQuiz(this,quizForm,quizController);
         }
 
-        public void ShowQuestion(QuizForm quizForm)
+        public void ShowQuestion()
         {
-            _quizState.ShowQuestion(this, quizForm);
+            _quizState.ShowQuestion();
         }
 
-        public void NextQuestion(QuizForm quizForm)
+        public void NextQuestion()
         {
             if(_currentQuestion < _questions.Count)
             {
                 _currentQuestion++;
-                _quizState.ShowQuestion(this, quizForm);
+                _quizState.ShowQuestion();
             }
         }
 
-        public void PreviousQuestion(QuizForm quizForm)
+        public void PreviousQuestion()
         {
             if (_currentQuestion > 0)
             {
                 _currentQuestion--;
-                _quizState.ShowQuestion(this, quizForm);
+                _quizState.ShowQuestion();
             }
+        }
+
+        public void SubmitAnswers()
+        {
+            _quizState.SubmitAnswers();
         }
 
         public int GetUserAnswer(int questionId)
@@ -105,9 +111,21 @@ namespace proiect_ip.Quiz
             return _userAnswers[questionId];
         }
 
+        public List<int> GetUserAnswers { get => _userAnswers; }
+
         public void SetUserAnswer(int questionId, int answer)
         {
             _userAnswers[questionId] = answer;
         }
+
+        public int GetQuizTime { get => _quizTime; }
+
+        public void IncrementQuizTime()
+        {
+            _quizTime++;
+        }
+
+        public int UserId { set => _userId = value; get => _userId; }
+
     }
 }

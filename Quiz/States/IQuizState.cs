@@ -9,13 +9,14 @@ namespace proiect_ip.Quiz
 {
     public interface IQuizState
     {
-        void OpenQuiz(Quiz quiz, QuizForm quizForm);
 
-        void ShowQuestion(Quiz quiz, QuizForm quizForm);
+        void OpenQuiz(Quiz quiz, QuizForm quizForm, QuizController quizController);
 
-        void ClickButton(object sender, EventArgs e, Quiz quiz);
+        void ShowQuestion();
 
-        //void SubmitAnswers()
+        void ClickButton(object sender, EventArgs e);
+
+        void SubmitAnswers();
 
         // Alte metode (cand imi vin idei)
     }

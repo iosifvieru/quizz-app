@@ -29,7 +29,15 @@ namespace proiect_ip.Quiz
 
         public String SetQuestion { set => _question = value; }
 
-
+        public int GetCorrectAnswerIndex ()
+        {
+            for(int i=0; i<_answers.Count; i++)
+            {
+                if (_answers[i].IsCorrect)
+                    return i;
+            }
+            return -1;
+        }
 
     }
 }

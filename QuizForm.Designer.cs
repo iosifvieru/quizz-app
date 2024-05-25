@@ -42,7 +42,7 @@
             this.buttonAnswer2 = new System.Windows.Forms.Button();
             this.buttonAnswer1 = new System.Windows.Forms.Button();
             this.textBoxQuestion = new System.Windows.Forms.TextBox();
-            this.TimpQuizz = new System.Windows.Forms.Label();
+            this.labelQuizTime = new System.Windows.Forms.Label();
             this.labelQuizTitle = new System.Windows.Forms.Label();
             this.TimerTimpScurs = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
@@ -57,14 +57,14 @@
             this.groupBox1.Controls.Add(this.buttonNext);
             this.groupBox1.Controls.Add(this.buttonBack);
             this.groupBox1.Controls.Add(this.groupBoxQuestion);
-            this.groupBox1.Controls.Add(this.TimpQuizz);
+            this.groupBox1.Controls.Add(this.labelQuizTime);
             this.groupBox1.Controls.Add(this.labelQuizTitle);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(931, 731);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(1241, 900);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -73,10 +73,10 @@
             this.buttonSubmit.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.buttonSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSubmit.ForeColor = System.Drawing.Color.White;
-            this.buttonSubmit.Location = new System.Drawing.Point(790, 648);
-            this.buttonSubmit.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSubmit.Location = new System.Drawing.Point(1053, 798);
+            this.buttonSubmit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSubmit.Name = "buttonSubmit";
-            this.buttonSubmit.Size = new System.Drawing.Size(128, 39);
+            this.buttonSubmit.Size = new System.Drawing.Size(171, 48);
             this.buttonSubmit.TabIndex = 6;
             this.buttonSubmit.Text = "Submit";
             this.buttonSubmit.UseVisualStyleBackColor = false;
@@ -87,10 +87,9 @@
             this.labelCurrentQuestion.AutoSize = true;
             this.labelCurrentQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCurrentQuestion.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelCurrentQuestion.Location = new System.Drawing.Point(11, 661);
-            this.labelCurrentQuestion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelCurrentQuestion.Location = new System.Drawing.Point(15, 814);
             this.labelCurrentQuestion.Name = "labelCurrentQuestion";
-            this.labelCurrentQuestion.Size = new System.Drawing.Size(179, 26);
+            this.labelCurrentQuestion.Size = new System.Drawing.Size(230, 32);
             this.labelCurrentQuestion.TabIndex = 5;
             this.labelCurrentQuestion.Text = "Question: {x} / {y}";
             // 
@@ -99,10 +98,10 @@
             this.buttonNext.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.buttonNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNext.ForeColor = System.Drawing.Color.White;
-            this.buttonNext.Location = new System.Drawing.Point(454, 648);
-            this.buttonNext.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonNext.Location = new System.Drawing.Point(605, 798);
+            this.buttonNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(128, 39);
+            this.buttonNext.Size = new System.Drawing.Size(171, 48);
             this.buttonNext.TabIndex = 4;
             this.buttonNext.Text = "Next";
             this.buttonNext.UseVisualStyleBackColor = false;
@@ -113,10 +112,10 @@
             this.buttonBack.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.buttonBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBack.ForeColor = System.Drawing.Color.White;
-            this.buttonBack.Location = new System.Drawing.Point(309, 648);
-            this.buttonBack.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonBack.Location = new System.Drawing.Point(412, 798);
+            this.buttonBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(128, 39);
+            this.buttonBack.Size = new System.Drawing.Size(171, 48);
             this.buttonBack.TabIndex = 3;
             this.buttonBack.Text = "Previous";
             this.buttonBack.UseVisualStyleBackColor = false;
@@ -127,11 +126,11 @@
             this.groupBoxQuestion.AutoSize = true;
             this.groupBoxQuestion.Controls.Add(this.groupBoxAnswers);
             this.groupBoxQuestion.Controls.Add(this.textBoxQuestion);
-            this.groupBoxQuestion.Location = new System.Drawing.Point(9, 65);
-            this.groupBoxQuestion.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBoxQuestion.Location = new System.Drawing.Point(12, 80);
+            this.groupBoxQuestion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBoxQuestion.Name = "groupBoxQuestion";
-            this.groupBoxQuestion.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBoxQuestion.Size = new System.Drawing.Size(915, 577);
+            this.groupBoxQuestion.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBoxQuestion.Size = new System.Drawing.Size(1220, 710);
             this.groupBoxQuestion.TabIndex = 2;
             this.groupBoxQuestion.TabStop = false;
             // 
@@ -141,11 +140,11 @@
             this.groupBoxAnswers.Controls.Add(this.buttonAnswer3);
             this.groupBoxAnswers.Controls.Add(this.buttonAnswer2);
             this.groupBoxAnswers.Controls.Add(this.buttonAnswer1);
-            this.groupBoxAnswers.Location = new System.Drawing.Point(4, 348);
-            this.groupBoxAnswers.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBoxAnswers.Location = new System.Drawing.Point(5, 428);
+            this.groupBoxAnswers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBoxAnswers.Name = "groupBoxAnswers";
-            this.groupBoxAnswers.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBoxAnswers.Size = new System.Drawing.Size(906, 210);
+            this.groupBoxAnswers.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBoxAnswers.Size = new System.Drawing.Size(1208, 258);
             this.groupBoxAnswers.TabIndex = 1;
             this.groupBoxAnswers.TabStop = false;
             // 
@@ -155,10 +154,10 @@
             this.buttonAnswer4.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonAnswer4.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAnswer4.ForeColor = System.Drawing.Color.White;
-            this.buttonAnswer4.Location = new System.Drawing.Point(2, 162);
-            this.buttonAnswer4.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAnswer4.Location = new System.Drawing.Point(3, 197);
+            this.buttonAnswer4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAnswer4.Name = "buttonAnswer4";
-            this.buttonAnswer4.Size = new System.Drawing.Size(902, 49);
+            this.buttonAnswer4.Size = new System.Drawing.Size(1202, 60);
             this.buttonAnswer4.TabIndex = 3;
             this.buttonAnswer4.Text = "D) Answer 4";
             this.buttonAnswer4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -170,10 +169,10 @@
             this.buttonAnswer3.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonAnswer3.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAnswer3.ForeColor = System.Drawing.Color.White;
-            this.buttonAnswer3.Location = new System.Drawing.Point(2, 113);
-            this.buttonAnswer3.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAnswer3.Location = new System.Drawing.Point(3, 137);
+            this.buttonAnswer3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAnswer3.Name = "buttonAnswer3";
-            this.buttonAnswer3.Size = new System.Drawing.Size(902, 49);
+            this.buttonAnswer3.Size = new System.Drawing.Size(1202, 60);
             this.buttonAnswer3.TabIndex = 2;
             this.buttonAnswer3.Text = "C) Answer 3";
             this.buttonAnswer3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -185,10 +184,10 @@
             this.buttonAnswer2.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonAnswer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAnswer2.ForeColor = System.Drawing.Color.White;
-            this.buttonAnswer2.Location = new System.Drawing.Point(2, 64);
-            this.buttonAnswer2.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAnswer2.Location = new System.Drawing.Point(3, 77);
+            this.buttonAnswer2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAnswer2.Name = "buttonAnswer2";
-            this.buttonAnswer2.Size = new System.Drawing.Size(902, 49);
+            this.buttonAnswer2.Size = new System.Drawing.Size(1202, 60);
             this.buttonAnswer2.TabIndex = 1;
             this.buttonAnswer2.Text = "B) Answer 2";
             this.buttonAnswer2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -200,10 +199,10 @@
             this.buttonAnswer1.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonAnswer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAnswer1.ForeColor = System.Drawing.Color.White;
-            this.buttonAnswer1.Location = new System.Drawing.Point(2, 15);
-            this.buttonAnswer1.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAnswer1.Location = new System.Drawing.Point(3, 17);
+            this.buttonAnswer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAnswer1.Name = "buttonAnswer1";
-            this.buttonAnswer1.Size = new System.Drawing.Size(902, 49);
+            this.buttonAnswer1.Size = new System.Drawing.Size(1202, 60);
             this.buttonAnswer1.TabIndex = 0;
             this.buttonAnswer1.Text = "A) Answer 1";
             this.buttonAnswer1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -217,27 +216,26 @@
             this.textBoxQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.textBoxQuestion.HideSelection = false;
-            this.textBoxQuestion.Location = new System.Drawing.Point(2, 15);
-            this.textBoxQuestion.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxQuestion.Location = new System.Drawing.Point(3, 17);
+            this.textBoxQuestion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxQuestion.Multiline = true;
             this.textBoxQuestion.Name = "textBoxQuestion";
             this.textBoxQuestion.ReadOnly = true;
-            this.textBoxQuestion.Size = new System.Drawing.Size(911, 329);
+            this.textBoxQuestion.Size = new System.Drawing.Size(1214, 404);
             this.textBoxQuestion.TabIndex = 0;
             this.textBoxQuestion.Text = resources.GetString("textBoxQuestion.Text");
             // 
-            // TimpQuizz
+            // labelQuizTime
             // 
-            this.TimpQuizz.AutoSize = true;
-            this.TimpQuizz.Dock = System.Windows.Forms.DockStyle.Right;
-            this.TimpQuizz.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimpQuizz.ForeColor = System.Drawing.SystemColors.Control;
-            this.TimpQuizz.Location = new System.Drawing.Point(701, 15);
-            this.TimpQuizz.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.TimpQuizz.Name = "TimpQuizz";
-            this.TimpQuizz.Size = new System.Drawing.Size(228, 36);
-            this.TimpQuizz.TabIndex = 1;
-            this.TimpQuizz.Text = "Time Left: 00:00";
+            this.labelQuizTime.AutoSize = true;
+            this.labelQuizTime.Dock = System.Windows.Forms.DockStyle.Right;
+            this.labelQuizTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelQuizTime.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelQuizTime.Location = new System.Drawing.Point(952, 17);
+            this.labelQuizTime.Name = "labelQuizTime";
+            this.labelQuizTime.Size = new System.Drawing.Size(286, 42);
+            this.labelQuizTime.TabIndex = 1;
+            this.labelQuizTime.Text = "Time Left: 00:00";
             // 
             // labelQuizTitle
             // 
@@ -245,27 +243,21 @@
             this.labelQuizTitle.Dock = System.Windows.Forms.DockStyle.Left;
             this.labelQuizTitle.Font = new System.Drawing.Font("Impact", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelQuizTitle.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelQuizTitle.Location = new System.Drawing.Point(2, 15);
-            this.labelQuizTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelQuizTitle.Location = new System.Drawing.Point(3, 17);
             this.labelQuizTitle.Name = "labelQuizTitle";
-            this.labelQuizTitle.Size = new System.Drawing.Size(269, 46);
+            this.labelQuizTitle.Size = new System.Drawing.Size(334, 59);
             this.labelQuizTitle.TabIndex = 0;
             this.labelQuizTitle.Text = "Quiz Application";
             // 
-            // TimerTimpScurs
-            // 
-            this.TimerTimpScurs.Interval = 1000;
-            this.TimerTimpScurs.Tick += new System.EventHandler(this.TimerTimpScurs_Tick);
-            // 
             // QuizForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(931, 696);
+            this.ClientSize = new System.Drawing.Size(1241, 857);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "QuizForm";
             this.Text = "QuizForm-App";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -282,7 +274,7 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.Label labelQuizTitle;
-        private System.Windows.Forms.Label TimpQuizz;
+        public System.Windows.Forms.Label labelQuizTime;
         private System.Windows.Forms.GroupBox groupBoxQuestion;
         public System.Windows.Forms.TextBox textBoxQuestion;
         private System.Windows.Forms.GroupBox groupBoxAnswers;
@@ -294,7 +286,7 @@
         public System.Windows.Forms.Label labelCurrentQuestion;
         public System.Windows.Forms.Button buttonNext;
         public System.Windows.Forms.Button buttonBack;
-        private System.Windows.Forms.Timer TimerTimpScurs;
+        public System.Windows.Forms.Timer TimerTimpScurs;
     }
 }
 

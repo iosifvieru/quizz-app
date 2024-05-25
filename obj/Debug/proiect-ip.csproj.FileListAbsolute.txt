@@ -65,3 +65,4 @@ C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect_ip.QuizzesListForm.
 C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect_ip.QuizForm.resources
 C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect-ip.exe.licenses
 C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect_ip.AdminPanel.resources
+D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\obj\Debug\proiect_ip.AdminPanel.resources

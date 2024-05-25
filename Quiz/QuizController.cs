@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace proiect_ip.Quiz
 {
@@ -140,6 +142,85 @@ namespace proiect_ip.Quiz
             }
 
             return true;
+        }
+
+        public List<int> GetQuizUserAnswers(int userId, int quizId)
+        {
+            string query = "SELECT answers FROM userAnswer WHERE userId='" + userId + "' AND quizId='" + quizId + "';";
+            DataTable result = _database.ExecuteQuery(query);
+            List<int> answers = new List<int>();
+
+            if (result.Rows.Count > 0)
+            {
+                DataRow row = result.Rows[0];
+
+                String answersString = row["answers"].ToString();
+
+                String[] individualAnswers = answersString.Split('_');
+                foreach(String answer in individualAnswers)
+                {
+                    if(answer != "")
+                        answers.Add(Convert.ToInt32(answer));
+                }
+            }
+            return answers;
+        }
+
+        public bool DeleteQuizProgress(int userId, int quizId)
+        {
+            string query = "DELETE FROM userAnswer WHERE userId='" + userId + "' AND quizId='" + quizId + "';";
+            if (_database.ExecuteNonQuery(query) > 0)
+                return true;
+            return false;
+        }
+
+        public int GetQuizUserTime(int userId, int quizId)
+        {
+            string query = "SELECT time FROM userAnswer WHERE userId='" + userId + "' AND quizId='" + quizId + "';";
+            DataTable result = _database.ExecuteQuery(query);
+            int time = 0;
+
+            if (result.Rows.Count > 0)
+            {
+                DataRow row = result.Rows[0];
+
+                time = Convert.ToInt32(row["time"]);
+            }
+            return time;
+        }
+
+        public String GetQuizStatus(int userId, int quizId)
+        {
+            string query = "SELECT status FROM userAnswer WHERE userId='" + userId + "' AND quizId='" + quizId + "';";
+            DataTable result = _database.ExecuteQuery(query);
+            String status = "Not Started";
+            
+            if (result.Rows.Count > 0)
+            {
+                DataRow row = result.Rows[0];
+
+                status = row["status"].ToString();
+            }
+            return status;
+        }
+
+        public bool SaveQuizAnswers(int userId, int quizId, String answers, int time, String status)
+        {
+            string query = "SELECT * FROM userAnswer WHERE userId='" + userId + "' AND quizId='" + quizId  + "';";
+            DataTable result = _database.ExecuteQuery(query);
+            if(result.Rows.Count > 0)
+            {;
+                query = "UPDATE userAnswer SET status='" + status + "', time='" + time + "', answers='" + answers +"';";
+                if (_database.ExecuteNonQuery(query) > 0)
+                    return true;
+            }
+            else
+            {
+                query = "INSERT INTO userAnswer(id, userId, quizId, answers, time, status) VALUES (NULL, '" + userId + "', '" + quizId + "', '" + answers + "', '" + time + "','" + status + "');";
+                if (_database.ExecuteNonQuery(query) > 0)
+                    return true;
+            }
+            return false;
         }
 
         // To be inplemented

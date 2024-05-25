@@ -85,7 +85,7 @@ namespace proiect_ip
         {
             if (_selectedItem != null)
             {
-                QuizForm quizForm = new QuizForm((int)_selectedItem.Tag);
+                QuizForm quizForm = new QuizForm((int)_selectedItem.Tag, _user.ID);
 
                 // daca fereasta Quizz este inchisa repare fereastra principala.
                 quizForm.FormClosed += (s, args) => this.Show();

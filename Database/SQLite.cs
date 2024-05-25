@@ -30,6 +30,7 @@ namespace proiect_ip.Database
             CreateQuizesTable();
             CreateQuestionsTable();
             CreateAnswersTable();
+            CreateUserAnswersTable();
         }
 
         public static SQLite GetInstance()
@@ -117,6 +118,29 @@ namespace proiect_ip.Database
                 database.Open();
 
                 string createTableQuery = "CREATE TABLE IF NOT EXISTS answer (id INTEGER NOT NULL UNIQUE, questionId INTEGER NOT NULL, answer TEXT NOT NULL, isCorrect INTEGER, PRIMARY KEY(id AUTOINCREMENT), FOREIGN KEY (questionId) REFERENCES question(id))";
+                SQLiteCommand createTable = new SQLiteCommand(createTableQuery, database);
+
+                createTable.ExecuteNonQuery();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                database.Close();
+            }
+        }
+
+        // Metoda ce creaza tabelul userAnswer
+        public void CreateUserAnswersTable()
+        {
+            try
+            {
+                database.Open();
+
+                string createTableQuery = "CREATE TABLE IF NOT EXISTS userAnswer (id INTEGER NOT NULL UNIQUE, userId INTEGER NOT NULL, quizId INTEGER NOT NULL, answers TEXT, time INTEGER NOT NULL, status TEXT NOT NULL, PRIMARY KEY(id AUTOINCREMENT), FOREIGN KEY (quizId) REFERENCES quiz(id), FOREIGN KEY (userId) REFERENCES users(id))";
                 SQLiteCommand createTable = new SQLiteCommand(createTableQuery, database);
 
                 createTable.ExecuteNonQuery();
