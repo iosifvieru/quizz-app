@@ -16,17 +16,38 @@ namespace proiect_ip.Quiz.States
         private Quiz _quiz;
         private QuizForm _quizForm;
 
+        // Deschide un Quiz de unde a ramas
+        // Preia raspunsurile salvate din baza de date si le adauga in Quiz
+        // Seteaza timer-ul si il porneste.
+        // Afiseaza intrebarea curenta.
         public void OpenQuiz(Quiz quiz, QuizForm quizForm, QuizController quizController)
         {
             _quiz = quiz;
             _quizForm = quizForm;
             _quizController = quizController;
-            // deschide quiz-ul la intrebarea la care ai ramas
+
+            List<int> userAnswers = _quizController.GetQuizUserAnswers(quiz.UserId, quiz.GetQuizId);
+            if(userAnswers.Count > 0)
+                for (int i = 0; i < _quiz.GetUserAnswers.Count; i++)
+                {
+                    _quiz.SetUserAnswer(i, userAnswers[i]);
+                }
+
 
             quizForm.TimerTimpScurs.Interval = 1000;
             quizForm.TimerTimpScurs.Tick += new System.EventHandler(this.TimerTimpScurs_Tick);
+
+            _quiz.SetQuizTime(_quizController.GetQuizUserTime(_quiz.UserId, _quiz.GetQuizId));
+
+            _quizForm.TimerTimpScurs.Enabled = true;
+
+            ShowQuestion();
         }
 
+        // Afiseaza intrebarea curenta
+        // Pune textul (raspunsurile) pe fiecare buton de raspuns corespunzator
+        // Reseteaza culoarea de fundal a butoanelor
+        // Afiseaza sau ascunde butoanele pentru parcurgere in functie de numarul intrebarii curente.
         public void ShowQuestion()
         {
 
@@ -37,21 +58,6 @@ namespace proiect_ip.Quiz.States
             _answers = _quiz.GetQuestions[_quiz.GetCurrentQuestionNumber].GetAnswers;
             answerButtons = new List<Button>();
 
-            // Shuffle the List of Answers
-            /*Random rand = new Random();
-            int n = _answers.Count;
-            Answer temp;
-            while(n > 1) 
-            {
-                n--;
-                int k = rand.Next(n + 1);
-                temp = _answers[k];
-                _answers[k] = _answers[n];
-                _answers[n] = temp;
-            }*/
-
-            // Poate facem astfel incat butoanele sa fie create dinamic
-            // Eventual si un shuffle la raspunsuri
             _quizForm.buttonAnswer1.Text = "A) " + _answers[0].GetAnswerText;
             _quizForm.buttonAnswer2.Text = "B) " + _answers[1].GetAnswerText;
             _quizForm.buttonAnswer3.Text = "C) " + _answers[2].GetAnswerText;
@@ -97,7 +103,7 @@ namespace proiect_ip.Quiz.States
 
             foreach (Button button in answerButtons)
             {
-                button.Click += (sender, EventArgs) => { ClickButton(sender, EventArgs); };
+                button.Click += (sender, EventArgs) => { ButtonAnswer_Click(sender, EventArgs); };
             }
 
             // Labels
@@ -105,29 +111,7 @@ namespace proiect_ip.Quiz.States
             _quizForm.labelCurrentQuestion.Text = "Question: " + (_quiz.GetCurrentQuestionNumber + 1) + " / " + _quiz.GetQuestions.Count;
         }
 
-        public void ClickButton(object sender, EventArgs e)
-        {
-            foreach (Button button in answerButtons)
-            {
-                if (button.BackColor == Color.Gold)
-                    button.BackColor = Color.DarkGray;
-            }
-
-            Button selectedButton = (Button)sender;
-            selectedButton.BackColor = Color.Gold;
-
-            int answerIndex = 0;
-            for(int i=0; i<answerButtons.Count; i++)
-            {
-                if(selectedButton == answerButtons[i])
-                {
-                        answerIndex = i;
-                }
-            }
-
-            _quiz.SetUserAnswer(_quiz.GetCurrentQuestionNumber, answerIndex);
-        }
-
+        // Calculeaza scorul, salveaza raspunsurile si marcheaza quiz-ul ca fiind completat.
         public void SubmitAnswers()
         {
             List<int> userAnswers = _quiz.GetUserAnswers;
@@ -149,21 +133,65 @@ namespace proiect_ip.Quiz.States
                 }
             }
             _quizController.SaveQuizAnswers(_quiz.UserId, _quiz.GetQuizId, answersString, _quiz.GetQuizTime, "Completed", score);
-            _quiz.SetState(new QuizInProgressState());
-            _quizForm.Close();        }
+            _quiz.SetState(new QuizCompletedState());
+            _quizForm.Close();
+        }
 
+        // Salveaza progresul partial si inchide quiz-ul curent.
+        public void CloseQuiz()
+        {
+            List<int> userAnswers = _quiz.GetUserAnswers;
+            String answersString = "";
+            if (userAnswers.Count > 0)
+            {
+                // Adauga raspunsul la string-ul cu raspunsuri
+                for (int i = 0; i < userAnswers.Count; i++)
+                    answersString += (userAnswers[i] + "_");
+            }
+            _quizController.SaveQuizAnswers(_quiz.UserId, _quiz.GetQuizId, answersString, _quiz.GetQuizTime, "In Progress", -1);
+        }
+
+        // Evenimentul de Tick pentru Timer
+        // Incrementeaza timpul scurs la fiecare secunda si actualizeaza textul corespunzator.
         private void TimerTimpScurs_Tick(object sender, EventArgs e)
         {
             _quiz.IncrementQuizTime();
             _quizForm.labelQuizTime.Text = "Contor Timp: " + ConvertToMinutes((uint)_quiz.GetQuizTime);
         }
 
+        // Converteste secundele in formatul: {x}:{y}
+        // {x} - Minute , {y} - Secunde
         private static string ConvertToMinutes(uint seconds)
         {
             uint minute = seconds / 60;
             uint secunde = seconds % 60;
 
             return $"{minute:D2}:{secunde:D2}";
+        }
+
+        // Evenimentul care se ocupa cu apasarea unui buton de raspuns
+        // Reseteaza culoarea celorlalte butoane, coloreaza cu 'Auriu' butonul selectat si trimite raspunsul catre quiz.
+        private void ButtonAnswer_Click(object sender, EventArgs e)
+        {
+            foreach (Button button in answerButtons)
+            {
+                if (button.BackColor == Color.Gold)
+                    button.BackColor = Color.DarkGray;
+            }
+
+            Button selectedButton = (Button)sender;
+            selectedButton.BackColor = Color.Gold;
+
+            int answerIndex = 0;
+            for (int i = 0; i < answerButtons.Count; i++)
+            {
+                if (selectedButton == answerButtons[i])
+                {
+                    answerIndex = i;
+                }
+            }
+
+            _quiz.SetUserAnswer(_quiz.GetCurrentQuestionNumber, answerIndex);
         }
     }
 }

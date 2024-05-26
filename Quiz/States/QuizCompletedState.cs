@@ -17,6 +17,9 @@ namespace proiect_ip.Quiz.States
         private Quiz _quiz;
         private QuizForm _quizForm;
 
+        // Deschide un Quiz in modul 'Review'
+        // Permite vizualizarea raspunsurilor corecte si raspunsurilor alese de catre utilizator
+        // Permite reluarea quiz-ului
         public void OpenQuiz(Quiz quiz, QuizForm quizForm, QuizController quizController)
         {
             _quiz = quiz;
@@ -25,11 +28,11 @@ namespace proiect_ip.Quiz.States
             _userAnswers = quizController.GetQuizUserAnswers(quiz.UserId, quiz.GetQuizId);
 
             ShowQuestion();
-
-            // deschide quiz-ul in modul review?
-            // nu porneste instanta de timer
         }
 
+        // Afiseaza intrebarea curenta
+        // Pune textul (raspunsul) corespunzator fiecarui buton
+        // Coloreaza cu 'Verde' raspunsurile corecte, iar cu 'Auriu', raspunsurile selectate de utilizator.
         public void ShowQuestion()
         {
             Question question = _quiz.GetQuestion();
@@ -86,16 +89,17 @@ namespace proiect_ip.Quiz.States
             _quizForm.labelCurrentQuestion.Text = "Question: " + (_quiz.GetCurrentQuestionNumber + 1) + " / " + _quiz.GetQuestions.Count;
         }
 
-        public void ClickButton(object sender, EventArgs e)
-        {
-            //
-        }
-
-        /// Reseteaza quiz-ul in cazul asta
+        // Reseteaza progresul quiz-ului
+        // Butonul aici nu are semnificatie de 'Submit', ci de 'Retry'
         public void SubmitAnswers()
         {
             _quizController.DeleteQuizProgress(_quiz.UserId, _quiz.GetQuizId);
             _quizForm.Close();
+        }
+
+        public void CloseQuiz()
+        {
+            // Evenimentul de inchidere este deja declansat altundeva.
         }
     }
 }

@@ -14,9 +14,9 @@ namespace proiect_ip.Quiz
 
         void ShowQuestion();
 
-        void ClickButton(object sender, EventArgs e);
-
         void SubmitAnswers();
+
+        void CloseQuiz();
 
         // Alte metode (cand imi vin idei)
     }

@@ -125,7 +125,17 @@ namespace proiect_ip.Quiz
             _quizTime++;
         }
 
+        public void SetQuizTime(int quizTime)
+        {
+            _quizTime = quizTime;
+        }
+
         public int UserId { set => _userId = value; get => _userId; }
+
+        public void CloseQuiz()
+        {
+            _quizState.CloseQuiz();
+        }
 
     }
 }

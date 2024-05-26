@@ -10,14 +10,14 @@ namespace proiect_ip.Quiz.States
     public class QuizNotStartedState : IQuizState
     {
         private Quiz _quiz;
-        private QuizForm _form;
+        private QuizForm _quizForm;
 
         public void OpenQuiz(Quiz quiz, QuizForm quizForm, QuizController quizController)
         {
             _quiz = quiz;
-            _form = quizForm;
+            _quizForm = quizForm;
 
-            quizForm.TimerTimpScurs.Enabled = true;
+            _quizForm.TimerTimpScurs.Enabled = true;
 
             _quiz.SetState(new QuizInProgressState());
             _quiz.OpenQuiz(quizForm, quizController);
@@ -26,20 +26,18 @@ namespace proiect_ip.Quiz.States
 
         public void ShowQuestion()
         {
-            // to be implemented
-        }
-
-        public void ClickButton(object sender, EventArgs e)
-        {
-            //
+            throw new InvalidOperationException("Nu se poate afisa intrebarea! Quiz-ul nu a inceput inca!");
         }
 
         public void SubmitAnswers()
         {
-
+            throw new InvalidOperationException("Nu se pot trimite raspunsurile! Quiz-ul nu a inceput inca!");
         }
 
+        public void CloseQuiz()
+        {
+            throw new InvalidOperationException("Nu se poate inchide quiz-ul! Quiz-ul nu a inceput inca!");
+        }
 
-        
     }
 }

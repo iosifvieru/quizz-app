@@ -64,5 +64,11 @@ namespace proiect_ip
         {
             _quiz.SubmitAnswers();
         }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+            _quiz.CloseQuiz();
+        }
     }
 }

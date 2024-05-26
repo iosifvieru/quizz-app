@@ -52,6 +52,7 @@ namespace proiect_ip
 
         private void InitializeListView()
         {
+            listViewQuizes.Clear();
 
             listViewQuizes.FullRowSelect = true;
             listViewQuizes.View = View.Details;
