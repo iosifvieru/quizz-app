@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,8 +16,8 @@ namespace proiect_ip
     {
         private List<Quiz.Quiz> _quizzes;
         private QuizController _quizController;
-        private int selectedQuizz;
-        private int selectedQuestion;
+        private int selectedQuizz = -1;
+        private int selectedQuestion = -1;
         public AdminPanel(List<Quiz.Quiz> quizzez)
         {
             InitializeComponent();
@@ -46,7 +47,20 @@ namespace proiect_ip
 
                 item.Tag = quiz.GetQuizId;
 
-                listViewQuizes.Items.Add(item);
+                if(quiz.IsVisible == true)
+                {
+                    listViewQuizes.Items.Add(item);
+                }
+
+                // pt modul de admin, quiz urile trecute ca fiind invizibile vor aparea taiate.
+
+                if (quiz.IsVisible == false)
+                {
+                    Font strikeoutFont = new Font(item.Font, FontStyle.Strikeout);
+                    item.Font = strikeoutFont;
+
+                    listViewQuizes.Items.Add(item);
+                }
             }
 
             this.Controls.Add(listViewQuizes);
@@ -90,6 +104,8 @@ namespace proiect_ip
                 int selectedIndex = listViewQuizes.SelectedIndices[0];
                 selectedQuizz = selectedIndex;
                 PopulateQuestionList(selectedIndex);
+
+                textBoxTitluQuizz.Text = _quizzes.ElementAt(selectedIndex).GetTitle;
             } 
             else
             {
@@ -107,6 +123,11 @@ namespace proiect_ip
             textBoxRaspuns2.Text = question.GetAnswers.ElementAt(1).GetAnswerText;
             textBoxRaspuns3.Text = question.GetAnswers.ElementAt(2).GetAnswerText;
             textBoxRaspuns4.Text = question.GetAnswers.ElementAt(3).GetAnswerText;
+
+            checkBoxRaspuns1.Checked = question.GetAnswers.ElementAt(0).IsCorrect;
+            checkBoxRaspuns2.Checked = question.GetAnswers.ElementAt(1).IsCorrect;
+            checkBoxRaspuns3.Checked = question.GetAnswers.ElementAt(2).IsCorrect;
+            checkBoxRaspuns4.Checked = question.GetAnswers.ElementAt(3).IsCorrect;
         }
 
         private void listViewQuestions_SelectedIndexChanged(object sender, EventArgs e)
@@ -142,6 +163,11 @@ namespace proiect_ip
             question.GetAnswers[2].SetAnswerText = raspuns3;
             question.GetAnswers[3].SetAnswerText = raspuns4;
 
+            question.GetAnswers[0].IsCorrect = checkBoxRaspuns1.Checked;
+            question.GetAnswers[1].IsCorrect = checkBoxRaspuns2.Checked;
+            question.GetAnswers[2].IsCorrect = checkBoxRaspuns3.Checked;
+            question.GetAnswers[3].IsCorrect = checkBoxRaspuns4.Checked;
+
             bool retVal = _quizController.EditQuizQuestion(selectedQuizz, question);
 
             if(retVal == false)
@@ -150,6 +176,92 @@ namespace proiect_ip
                 return;
             }
             MessageBox.Show("Succes!");
+        }
+
+        private void StergeIntrebareaButton_Click(object sender, EventArgs e)
+        {
+            if (selectedQuestion < 0)
+            {
+                MessageBox.Show("Trebuie sa selectezi o intrebare.");
+                return;
+            }
+
+            DialogResult result = MessageBox.Show(
+                "Esti sigur ca vrei sa stergi intrebarea?",
+                "Da",
+                MessageBoxButtons.YesNo
+                );
+
+            if(result == DialogResult.Yes)
+            {
+                listViewQuestions.Items.RemoveAt(selectedQuestion);
+
+                Question question = _quizzes.ElementAt(selectedQuizz).GetQuestions.ElementAt(selectedQuestion);
+
+                _quizController.DeleteQuizQuestion(question.ID);
+            }
+        }
+
+        private void buttonAdaugaQuizz_Click(object sender, EventArgs e)
+        {
+            if(String.IsNullOrEmpty(textBoxTitluQuizz.Text))
+            {
+                MessageBox.Show("Trebuie sa introduci un titlu.");
+                return;
+            }
+
+            _quizController.AddQuiz(textBoxTitluQuizz.Text);
+            RefreshListView();
+        }
+
+        private void RefreshListView()
+        {
+            listViewQuizes.Clear();
+            listViewQuestions.Clear();
+
+            _quizzes = _quizController.GetAllQuizzes();
+            InitializeListView();
+            InitializeQuestionView();
+        }
+
+        private void DeleteQuizButton_Click(object sender, EventArgs e)
+        {
+            if(selectedQuizz < 0)
+            {
+                return;
+            }
+
+            _quizController.DeleteQuiz(selectedQuizz+1);
+            RefreshListView();
+        }
+
+        private void buttonAdaugaIntrebare_Click(object sender, EventArgs e)
+        {
+            string intrebare = textBoxIntrebare.Text.Trim();
+            string raspuns1 = textBoxRaspuns1.Text.Trim();
+            string raspuns2 = textBoxRaspuns2.Text.Trim();
+            string raspuns3 = textBoxRaspuns3.Text.Trim();
+            string raspuns4 = textBoxRaspuns4.Text.Trim();
+
+            if (String.IsNullOrEmpty(intrebare) || String.IsNullOrEmpty(raspuns1) || String.IsNullOrEmpty(raspuns2) || String.IsNullOrEmpty(raspuns3) || String.IsNullOrEmpty(raspuns4))
+            {
+                MessageBox.Show("Campurile sunt goale.");
+                return;
+            }
+
+            List<Answer> answerList = new List<Answer>
+            {
+                new Answer(0, raspuns1, checkBoxRaspuns1.Checked),
+                new Answer(0, raspuns2, checkBoxRaspuns2.Checked),
+                new Answer(0, raspuns3, checkBoxRaspuns3.Checked),
+                new Answer(0, raspuns4, checkBoxRaspuns4.Checked)
+            };
+
+            Question question = new Question(0, intrebare, answerList);
+
+            _quizController.AddQuizQuestion(selectedQuizz+1, question);
+
+            RefreshListView();
         }
     }
 }

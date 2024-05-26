@@ -10,6 +10,8 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Windows.Forms.VisualStyles;
+using System.CodeDom.Compiler;
 
 namespace proiect_ip.Quiz
 {
@@ -42,6 +44,14 @@ namespace proiect_ip.Quiz
                     if (row["isVisible"] != DBNull.Value)
                     {
                         isVisible = true;
+                    }
+
+                    // rezolva un "bug" provocat de if -ul de mai sus.
+                    // motivul pt. care am preferat o astfel de abordare este deoarece in baza de date pe campul "isVisible"
+                    // pot exista valori nule, a.i pentru a nu strica functionalitatea deja existenta am implementat asa.
+                    if (row["isVisible"].ToString() == "0")
+                    {
+                        isVisible = false;
                     }
 
                     quizzesList.Add( new Quiz(id, title, isVisible));
@@ -99,6 +109,12 @@ namespace proiect_ip.Quiz
                         isCorrect = true;
                     }
 
+                    // repara un bug provocat de if ul de mai sus in care pune pe "true" orice valoare != NULL
+                    if (row["isCorrect"].ToString() == "0")
+                    {
+                        isCorrect = false;
+                    }
+
                     answers.Add(new Answer(id, answerText, isCorrect));
                 }
             }
@@ -130,6 +146,13 @@ namespace proiect_ip.Quiz
             return questions;
         }
 
+        public bool AddQuiz(string titlu)
+        {
+            string query = "INSERT INTO quiz (title, isVisible) VALUES ('" + titlu + "', 1);";
+            _database.ExecuteNonQuery(query);
+            return true;
+        }
+
         public bool EditQuizQuestion(int quizId, Question question)
         {
             string query = "UPDATE question SET question='"+ question.GetQuestion + "' WHERE id='"+ question.ID +"'";
@@ -137,10 +160,48 @@ namespace proiect_ip.Quiz
             _database.ExecuteNonQuery(query);
 
             foreach(Answer answer in question.GetAnswers) {
-                string answerQuery = "UPDATE answer SET answer='" + answer.GetAnswerText + "' WHERE id='" + answer.ID + "'";
+                string answerQuery = "UPDATE answer SET answer='" + answer.GetAnswerText + "', isCorrect = " + Convert.ToInt32(answer.IsCorrect) + " WHERE id='" + answer.ID + "'";
                 _database.ExecuteNonQuery(answerQuery);
             }
 
+            return true;
+        }
+
+        public bool DeleteQuizQuestion(int quizId)
+        {
+            string query = "DELETE FROM question WHERE id=' " + quizId + "'";
+
+            _database.ExecuteNonQuery(query);
+            return true;
+        }
+
+        public bool AddQuizQuestion(int quizId, Question question)
+        {
+            string query = "INSERT INTO question (quizId, question, score) VALUES ('" + quizId + "', '" + question.GetQuestion +"', '" + question.GetScore + "')";
+            _database.ExecuteNonQuery(query);
+
+            query = "SELECT id FROM question WHERE question = '" + question.GetQuestion + "'";
+            DataTable result = _database.ExecuteQuery(query);
+
+            if (result.Rows.Count > 0)
+            {
+                DataRow row = result.Rows[0];
+                
+                int id = Convert.ToInt32(row["id"]);
+                
+                foreach(Answer answer in question.GetAnswers) {
+                    query = "INSERT INTO answer (questionId, answer, isCorrect) VALUES ('" + id + "', '" + answer.GetAnswerText + "', '" + Convert.ToInt32(answer.IsCorrect) + "');";
+                    _database.ExecuteNonQuery(query);
+                }
+            }
+            return true;
+        }
+
+        // "soft" delete, doar modifica parametrul isVisible, practic il ascunde mai bine spus.
+        public bool DeleteQuiz(int quizId)
+        {
+            string query = "UPDATE quiz SET isVisible = 0 WHERE id = '" + quizId +"'";
+            _database.ExecuteQuery(query);
             return true;
         }
 

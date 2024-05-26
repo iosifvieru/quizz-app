@@ -41,6 +41,20 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.StergeIntrebareaButton = new System.Windows.Forms.Button();
+            this.textBoxTitluQuizz = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBoxRaspuns4 = new System.Windows.Forms.CheckBox();
+            this.checkBoxRaspuns3 = new System.Windows.Forms.CheckBox();
+            this.checkBoxRaspuns2 = new System.Windows.Forms.CheckBox();
+            this.checkBoxRaspuns1 = new System.Windows.Forms.CheckBox();
+            this.buttonAdaugaIntrebare = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.DeleteQuizButton = new System.Windows.Forms.Button();
+            this.buttonAdaugaQuizz = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // listViewQuizes
@@ -65,44 +79,44 @@
             // 
             // textBoxIntrebare
             // 
-            this.textBoxIntrebare.Location = new System.Drawing.Point(547, 290);
+            this.textBoxIntrebare.Location = new System.Drawing.Point(595, 293);
             this.textBoxIntrebare.Name = "textBoxIntrebare";
             this.textBoxIntrebare.Size = new System.Drawing.Size(187, 20);
             this.textBoxIntrebare.TabIndex = 3;
             // 
             // textBoxRaspuns1
             // 
-            this.textBoxRaspuns1.Location = new System.Drawing.Point(547, 350);
+            this.textBoxRaspuns1.Location = new System.Drawing.Point(595, 346);
             this.textBoxRaspuns1.Name = "textBoxRaspuns1";
             this.textBoxRaspuns1.Size = new System.Drawing.Size(100, 20);
             this.textBoxRaspuns1.TabIndex = 4;
             // 
             // textBoxRaspuns2
             // 
-            this.textBoxRaspuns2.Location = new System.Drawing.Point(547, 397);
+            this.textBoxRaspuns2.Location = new System.Drawing.Point(595, 397);
             this.textBoxRaspuns2.Name = "textBoxRaspuns2";
             this.textBoxRaspuns2.Size = new System.Drawing.Size(100, 20);
             this.textBoxRaspuns2.TabIndex = 5;
             // 
             // textBoxRaspuns3
             // 
-            this.textBoxRaspuns3.Location = new System.Drawing.Point(547, 445);
+            this.textBoxRaspuns3.Location = new System.Drawing.Point(595, 445);
             this.textBoxRaspuns3.Name = "textBoxRaspuns3";
             this.textBoxRaspuns3.Size = new System.Drawing.Size(100, 20);
             this.textBoxRaspuns3.TabIndex = 6;
             // 
             // textBoxRaspuns4
             // 
-            this.textBoxRaspuns4.Location = new System.Drawing.Point(547, 488);
+            this.textBoxRaspuns4.Location = new System.Drawing.Point(595, 488);
             this.textBoxRaspuns4.Name = "textBoxRaspuns4";
             this.textBoxRaspuns4.Size = new System.Drawing.Size(100, 20);
             this.textBoxRaspuns4.TabIndex = 7;
             // 
             // EditQuestion
             // 
-            this.EditQuestion.Location = new System.Drawing.Point(707, 353);
+            this.EditQuestion.Location = new System.Drawing.Point(273, 63);
             this.EditQuestion.Name = "EditQuestion";
-            this.EditQuestion.Size = new System.Drawing.Size(75, 53);
+            this.EditQuestion.Size = new System.Drawing.Size(75, 42);
             this.EditQuestion.TabIndex = 8;
             this.EditQuestion.Text = "Modifica intrebarea";
             this.EditQuestion.UseVisualStyleBackColor = true;
@@ -111,7 +125,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(480, 293);
+            this.label1.Location = new System.Drawing.Point(528, 296);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 9;
@@ -120,7 +134,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(480, 353);
+            this.label2.Location = new System.Drawing.Point(528, 349);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 10;
@@ -129,7 +143,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(480, 400);
+            this.label3.Location = new System.Drawing.Point(528, 400);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 13);
             this.label3.TabIndex = 11;
@@ -138,7 +152,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(480, 448);
+            this.label4.Location = new System.Drawing.Point(528, 448);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 13);
             this.label4.TabIndex = 12;
@@ -147,11 +161,132 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(480, 491);
+            this.label5.Location = new System.Drawing.Point(528, 491);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 13);
             this.label5.TabIndex = 13;
             this.label5.Text = "Raspuns 4:";
+            // 
+            // StergeIntrebareaButton
+            // 
+            this.StergeIntrebareaButton.Location = new System.Drawing.Point(273, 129);
+            this.StergeIntrebareaButton.Name = "StergeIntrebareaButton";
+            this.StergeIntrebareaButton.Size = new System.Drawing.Size(75, 49);
+            this.StergeIntrebareaButton.TabIndex = 14;
+            this.StergeIntrebareaButton.Text = "Sterge intrebarea selectata";
+            this.StergeIntrebareaButton.UseVisualStyleBackColor = true;
+            this.StergeIntrebareaButton.Click += new System.EventHandler(this.StergeIntrebareaButton_Click);
+            // 
+            // textBoxTitluQuizz
+            // 
+            this.textBoxTitluQuizz.Location = new System.Drawing.Point(68, 36);
+            this.textBoxTitluQuizz.Name = "textBoxTitluQuizz";
+            this.textBoxTitluQuizz.Size = new System.Drawing.Size(116, 20);
+            this.textBoxTitluQuizz.TabIndex = 15;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.checkBoxRaspuns4);
+            this.groupBox1.Controls.Add(this.checkBoxRaspuns3);
+            this.groupBox1.Controls.Add(this.checkBoxRaspuns2);
+            this.groupBox1.Controls.Add(this.checkBoxRaspuns1);
+            this.groupBox1.Controls.Add(this.buttonAdaugaIntrebare);
+            this.groupBox1.Controls.Add(this.StergeIntrebareaButton);
+            this.groupBox1.Controls.Add(this.EditQuestion);
+            this.groupBox1.Location = new System.Drawing.Point(503, 271);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(357, 273);
+            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Intrebari";
+            // 
+            // checkBoxRaspuns4
+            // 
+            this.checkBoxRaspuns4.AutoSize = true;
+            this.checkBoxRaspuns4.Location = new System.Drawing.Point(199, 220);
+            this.checkBoxRaspuns4.Name = "checkBoxRaspuns4";
+            this.checkBoxRaspuns4.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxRaspuns4.TabIndex = 22;
+            this.checkBoxRaspuns4.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxRaspuns3
+            // 
+            this.checkBoxRaspuns3.AutoSize = true;
+            this.checkBoxRaspuns3.Location = new System.Drawing.Point(199, 177);
+            this.checkBoxRaspuns3.Name = "checkBoxRaspuns3";
+            this.checkBoxRaspuns3.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxRaspuns3.TabIndex = 21;
+            this.checkBoxRaspuns3.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxRaspuns2
+            // 
+            this.checkBoxRaspuns2.AutoSize = true;
+            this.checkBoxRaspuns2.Location = new System.Drawing.Point(199, 129);
+            this.checkBoxRaspuns2.Name = "checkBoxRaspuns2";
+            this.checkBoxRaspuns2.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxRaspuns2.TabIndex = 20;
+            this.checkBoxRaspuns2.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxRaspuns1
+            // 
+            this.checkBoxRaspuns1.AutoSize = true;
+            this.checkBoxRaspuns1.Location = new System.Drawing.Point(199, 78);
+            this.checkBoxRaspuns1.Name = "checkBoxRaspuns1";
+            this.checkBoxRaspuns1.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxRaspuns1.TabIndex = 19;
+            this.checkBoxRaspuns1.UseVisualStyleBackColor = true;
+            // 
+            // buttonAdaugaIntrebare
+            // 
+            this.buttonAdaugaIntrebare.Location = new System.Drawing.Point(273, 203);
+            this.buttonAdaugaIntrebare.Name = "buttonAdaugaIntrebare";
+            this.buttonAdaugaIntrebare.Size = new System.Drawing.Size(75, 46);
+            this.buttonAdaugaIntrebare.TabIndex = 18;
+            this.buttonAdaugaIntrebare.Text = "Adauga intrebarea";
+            this.buttonAdaugaIntrebare.UseVisualStyleBackColor = true;
+            this.buttonAdaugaIntrebare.Click += new System.EventHandler(this.buttonAdaugaIntrebare_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.DeleteQuizButton);
+            this.groupBox2.Controls.Add(this.buttonAdaugaQuizz);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.textBoxTitluQuizz);
+            this.groupBox2.Location = new System.Drawing.Point(41, 271);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(231, 135);
+            this.groupBox2.TabIndex = 17;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Quizz";
+            // 
+            // DeleteQuizButton
+            // 
+            this.DeleteQuizButton.Location = new System.Drawing.Point(96, 101);
+            this.DeleteQuizButton.Name = "DeleteQuizButton";
+            this.DeleteQuizButton.Size = new System.Drawing.Size(88, 28);
+            this.DeleteQuizButton.TabIndex = 18;
+            this.DeleteQuizButton.Text = "Sterge";
+            this.DeleteQuizButton.UseVisualStyleBackColor = true;
+            this.DeleteQuizButton.Click += new System.EventHandler(this.DeleteQuizButton_Click);
+            // 
+            // buttonAdaugaQuizz
+            // 
+            this.buttonAdaugaQuizz.Location = new System.Drawing.Point(96, 67);
+            this.buttonAdaugaQuizz.Name = "buttonAdaugaQuizz";
+            this.buttonAdaugaQuizz.Size = new System.Drawing.Size(88, 28);
+            this.buttonAdaugaQuizz.TabIndex = 17;
+            this.buttonAdaugaQuizz.Text = "Adauga";
+            this.buttonAdaugaQuizz.UseVisualStyleBackColor = true;
+            this.buttonAdaugaQuizz.Click += new System.EventHandler(this.buttonAdaugaQuizz_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(32, 39);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(30, 13);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Titlu:";
             // 
             // AdminPanel
             // 
@@ -163,7 +298,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.EditQuestion);
             this.Controls.Add(this.textBoxRaspuns4);
             this.Controls.Add(this.textBoxRaspuns3);
             this.Controls.Add(this.textBoxRaspuns2);
@@ -171,8 +305,14 @@
             this.Controls.Add(this.textBoxIntrebare);
             this.Controls.Add(this.listViewQuestions);
             this.Controls.Add(this.listViewQuizes);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox2);
             this.Name = "AdminPanel";
             this.Text = "AdminPanel";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,5 +333,17 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button StergeIntrebareaButton;
+        private System.Windows.Forms.TextBox textBoxTitluQuizz;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button buttonAdaugaQuizz;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button buttonAdaugaIntrebare;
+        private System.Windows.Forms.CheckBox checkBoxRaspuns4;
+        private System.Windows.Forms.CheckBox checkBoxRaspuns3;
+        private System.Windows.Forms.CheckBox checkBoxRaspuns2;
+        private System.Windows.Forms.CheckBox checkBoxRaspuns1;
+        private System.Windows.Forms.Button DeleteQuizButton;
     }
 }

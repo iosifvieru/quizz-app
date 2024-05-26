@@ -23,6 +23,9 @@ namespace proiect_ip.Quiz
         public String SetAnswerText { set => _answer = value; }
 
         public int ID { get => _id; }
-        public bool IsCorrect { get => _isCorrect; }
+        public bool IsCorrect {
+            get => _isCorrect;
+            set => _isCorrect = value;
+        }
     }
 }

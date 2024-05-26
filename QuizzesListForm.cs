@@ -76,7 +76,23 @@ namespace proiect_ip
 
                 item.Tag = quiz.GetQuizId;
                 
-                listViewQuizes.Items.Add(item);
+                if(quiz.IsVisible == true)
+                {
+                    listViewQuizes.Items.Add(item);
+                }
+
+                // pt modul de admin, quiz urile trecute ca fiind invizibile vor aparea taiate.
+                if(_user.Admin > 0)
+                {
+                    if(quiz.IsVisible == false)
+                    {
+                        Font strikeoutFont = new Font(item.Font, FontStyle.Strikeout);
+                        item.Font = strikeoutFont;
+
+                        listViewQuizes.Items.Add(item);
+                    }
+                }
+
             }
 
             this.Controls.Add(listViewQuizes);
