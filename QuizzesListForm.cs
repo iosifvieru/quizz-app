@@ -25,9 +25,10 @@ namespace proiect_ip
             _quizController = new QuizController();
             _quizzes = _quizController.GetAllQuizzes();
 
-            InitializeListView();
-            
             _user = user;
+
+            InitializeListView();
+           
 
             // daca flagul isAdmin este != 0 at. utilizatorul este admininstrator.
             if(_user.Admin == 0)
@@ -35,6 +36,18 @@ namespace proiect_ip
                 ButtonAdmin.Enabled = false;
                 ButtonAdmin.Visible = false;
             }
+        }
+
+        private void RefreshList()
+        {
+            foreach(ListViewItem item in listViewQuizes.Items)
+            {
+                item.SubItems[1].Text = (_quizzes[Convert.ToInt32(item.Tag.ToString())-1].GetQuestions.Count.ToString());
+                item.SubItems[2].Text = (_quizController.GetQuizStatus(_user.ID, _quizzes[Convert.ToInt32(item.Tag.ToString())-1].GetQuizId));
+                item.SubItems[3].Text = (_quizController.GetQuizUserScore(_user.ID, _quizzes[Convert.ToInt32(item.Tag.ToString())-1].GetQuizId).ToString());
+                item.SubItems[4].Text = (ConvertToMinutes((uint)_quizController.GetQuizUserTime(_user.ID, _quizzes[Convert.ToInt32(item.Tag.ToString())-1].GetQuizId)));
+            }
+
         }
 
         private void InitializeListView()
@@ -47,12 +60,18 @@ namespace proiect_ip
 
             listViewQuizes.Columns.Add("Quiz Name", 250);
             listViewQuizes.Columns.Add("Questions", 100);
+            listViewQuizes.Columns.Add("Status", 100);
+            listViewQuizes.Columns.Add("Score", 100);
+            listViewQuizes.Columns.Add("Your Time", 100);
 
-            foreach(Quiz.Quiz quiz in  _quizzes)
+            foreach (Quiz.Quiz quiz in  _quizzes)
             {
                 quiz.SetQuestions(_quizController.GetQuizQuestions(quiz.GetQuizId));
                 ListViewItem item = new ListViewItem(quiz.GetTitle);
                 item.SubItems.Add(quiz.GetQuestions.Count.ToString());
+                item.SubItems.Add(_quizController.GetQuizStatus(_user.ID,quiz.GetQuizId));
+                item.SubItems.Add(_quizController.GetQuizUserScore(_user.ID, quiz.GetQuizId).ToString());
+                item.SubItems.Add(ConvertToMinutes((uint)_quizController.GetQuizUserTime(_user.ID, quiz.GetQuizId)));
 
                 item.Tag = quiz.GetQuizId;
                 
@@ -88,7 +107,7 @@ namespace proiect_ip
                 QuizForm quizForm = new QuizForm((int)_selectedItem.Tag, _user.ID);
 
                 // daca fereasta Quizz este inchisa repare fereastra principala.
-                quizForm.FormClosed += (s, args) => this.Show();
+                quizForm.FormClosed += (s, args) => { this.RefreshList(); this.Show(); };
                 quizForm.Show();
 
                 // ascunde ferastra curenta.
@@ -113,6 +132,14 @@ namespace proiect_ip
             adminPanelForm.Show();
 
             this.Hide();
+        }
+
+        private static string ConvertToMinutes(uint seconds)
+        {
+            uint minute = seconds / 60;
+            uint secunde = seconds % 60;
+
+            return $"{minute:D2}:{secunde:D2}";
         }
     }
 }

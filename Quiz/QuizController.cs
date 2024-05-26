@@ -174,6 +174,24 @@ namespace proiect_ip.Quiz
             return false;
         }
 
+        public int GetQuizUserScore(int userId, int quizId)
+        {
+            string query = "SELECT score FROM userAnswer WHERE userId='" + userId + "' AND quizId='" + quizId + "';";
+            DataTable result = _database.ExecuteQuery(query);
+            int score = -1;
+
+            if (result.Rows.Count > 0)
+            {
+                DataRow row = result.Rows[0];
+
+                if (row["score"] != DBNull.Value)
+                    score = Convert.ToInt32(row["score"]);
+                else
+                    score = -1;
+            }
+            return score;
+        }
+
         public int GetQuizUserTime(int userId, int quizId)
         {
             string query = "SELECT time FROM userAnswer WHERE userId='" + userId + "' AND quizId='" + quizId + "';";
@@ -204,19 +222,19 @@ namespace proiect_ip.Quiz
             return status;
         }
 
-        public bool SaveQuizAnswers(int userId, int quizId, String answers, int time, String status)
+        public bool SaveQuizAnswers(int userId, int quizId, String answers, int time, String status, int score)
         {
             string query = "SELECT * FROM userAnswer WHERE userId='" + userId + "' AND quizId='" + quizId  + "';";
             DataTable result = _database.ExecuteQuery(query);
             if(result.Rows.Count > 0)
             {;
-                query = "UPDATE userAnswer SET status='" + status + "', time='" + time + "', answers='" + answers +"';";
+                query = "UPDATE userAnswer SET status='" + status + "', time='" + time + "', answers='" + answers + "', score='" + score + "';";
                 if (_database.ExecuteNonQuery(query) > 0)
                     return true;
             }
             else
             {
-                query = "INSERT INTO userAnswer(id, userId, quizId, answers, time, status) VALUES (NULL, '" + userId + "', '" + quizId + "', '" + answers + "', '" + time + "','" + status + "');";
+                query = "INSERT INTO userAnswer(id, userId, quizId, answers, time, status, score) VALUES (NULL, '" + userId + "', '" + quizId + "', '" + answers + "', '" + time + "','" + status + "', '" + score + "');";
                 if (_database.ExecuteNonQuery(query) > 0)
                     return true;
             }

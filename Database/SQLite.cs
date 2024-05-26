@@ -140,7 +140,7 @@ namespace proiect_ip.Database
             {
                 database.Open();
 
-                string createTableQuery = "CREATE TABLE IF NOT EXISTS userAnswer (id INTEGER NOT NULL UNIQUE, userId INTEGER NOT NULL, quizId INTEGER NOT NULL, answers TEXT, time INTEGER NOT NULL, status TEXT NOT NULL, PRIMARY KEY(id AUTOINCREMENT), FOREIGN KEY (quizId) REFERENCES quiz(id), FOREIGN KEY (userId) REFERENCES users(id))";
+                string createTableQuery = "CREATE TABLE IF NOT EXISTS userAnswer (id INTEGER NOT NULL UNIQUE, userId INTEGER NOT NULL, quizId INTEGER NOT NULL, answers TEXT, time INTEGER NOT NULL, status TEXT NOT NULL, score INTEGER, PRIMARY KEY(id AUTOINCREMENT), FOREIGN KEY (quizId) REFERENCES quiz(id), FOREIGN KEY (userId) REFERENCES users(id))";
                 SQLiteCommand createTable = new SQLiteCommand(createTableQuery, database);
 
                 createTable.ExecuteNonQuery();

@@ -148,11 +148,9 @@ namespace proiect_ip.Quiz.States
                     }
                 }
             }
-            _quizController.SaveQuizAnswers(_quiz.UserId, _quiz.GetQuizId, answersString, _quiz.GetQuizTime, "Completed");
+            _quizController.SaveQuizAnswers(_quiz.UserId, _quiz.GetQuizId, answersString, _quiz.GetQuizTime, "Completed", score);
             _quiz.SetState(new QuizInProgressState());
-            _quizForm.Close();
-            MessageBox.Show("User Answers: " + answersString + "\n Score: " + score + " / " + maxScore + "\n Completed in: {x}:{y}");
-        }
+            _quizForm.Close();        }
 
         private void TimerTimpScurs_Tick(object sender, EventArgs e)
         {
