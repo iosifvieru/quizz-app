@@ -306,6 +306,7 @@
     <Content Include="bin\Debug\x64\sqlite3.dll" />
     <Content Include="bin\Debug\x86\SQLite.Interop.dll" />
     <Content Include="bin\Debug\x86\sqlite3.dll" />
+    <None Include="MainMenuLogo.png" />
     <Content Include="obj\Debug\proiect-ip.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\proiect-ip.exe" />
     <Content Include="obj\Debug\proiect-ip.exe.licenses" />

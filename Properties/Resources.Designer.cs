@@ -73,6 +73,46 @@ namespace proiect_ip.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MainMenuImage11 {
+            get {
+                object obj = ResourceManager.GetObject("MainMenuImage11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MainMenuImage12 {
+            get {
+                object obj = ResourceManager.GetObject("MainMenuImage12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MainMenuImage13 {
+            get {
+                object obj = ResourceManager.GetObject("MainMenuImage13", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MainMenuLogo {
+            get {
+                object obj = ResourceManager.GetObject("MainMenuLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap RegisterLogo1 {
             get {
                 object obj = ResourceManager.GetObject("RegisterLogo1", resourceCulture);
@@ -126,6 +166,16 @@ namespace proiect_ip.Properties {
         internal static System.Drawing.Bitmap RegisterLogo22 {
             get {
                 object obj = ResourceManager.GetObject("RegisterLogo22", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RegisterLogo23 {
+            get {
+                object obj = ResourceManager.GetObject("RegisterLogo23", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
