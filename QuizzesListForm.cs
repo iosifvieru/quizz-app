@@ -38,6 +38,7 @@ namespace proiect_ip
             }
         }
 
+        // Reimprospateaza lista cu quiz-uri.
         private void RefreshList()
         {
             foreach(ListViewItem item in listViewQuizes.Items)
@@ -50,6 +51,7 @@ namespace proiect_ip
 
         }
 
+        // Initializeaza lista cu quiz-uri.
         private void InitializeListView()
         {
             listViewQuizes.Clear();
@@ -100,6 +102,7 @@ namespace proiect_ip
             listViewQuizes.SelectedIndexChanged += ListView_SelectedIndexChanged;
         }
 
+        // Evenimentul care determina quiz-ul selectat.
         private void ListView_SelectedIndexChanged(object sender, EventArgs e)
         {
             ListView listView = sender as ListView;
@@ -112,11 +115,13 @@ namespace proiect_ip
             }
         }
 
+        // Evenimentul butonului care te intoarce la meniul precedent.
         private void buttonBack_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        // Evenimentul butonului care deschide un quiz.
         private void buttonOpenQuiz_Click(object sender, EventArgs e)
         {
             if (_selectedItem != null)
@@ -134,6 +139,8 @@ namespace proiect_ip
                 MessageBox.Show("Trebuie sa selectezi un quiz!");
         }
 
+        // Evenimentul specific butonului de Admin
+        // Deschide meniul de Admin daca utilizatorul are permisiuniea.
         private void ButtonAdmin_Click(object sender, EventArgs e)
         {
             
@@ -151,6 +158,11 @@ namespace proiect_ip
             this.Hide();
         }
 
+        /// <summary>
+        /// Converteste un numar in minute si secunde.
+        /// </summary>
+        /// <param name="seconds">Numarul de secunde</param>
+        /// <returns>String-ul ce contine numarul in noul format</returns>
         private static string ConvertToMinutes(uint seconds)
         {
             uint minute = seconds / 60;
