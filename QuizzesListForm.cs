@@ -146,25 +146,6 @@ namespace proiect_ip
             else
                 MessageBox.Show("Trebuie sa selectezi un quiz!");
         }
-
-<<<<<<< HEAD
-
-
-        private static string ConvertToMinutes(uint seconds)
-=======
-        // Evenimentul specific butonului de Admin
-        // Deschide meniul de Admin daca utilizatorul are permisiuniea.
-        private void ButtonAdmin_Click(object sender, EventArgs e)
->>>>>>> b208fcc7b0f283c8c9dcd040f1b3b77c33826fec
-        {
-            uint minute = seconds / 60;
-            uint secunde = seconds % 60;
-
-            return $"{minute:D2}:{secunde:D2}";
-        }
-
-     
-
         private void butonAdmin_Click(object sender, EventArgs e)
         {
             if (_user.Admin == 0)
@@ -180,8 +161,6 @@ namespace proiect_ip
 
             this.Hide();
         }
-<<<<<<< HEAD
-=======
 
         /// <summary>
         /// Converteste un numar in minute si secunde.
@@ -195,6 +174,5 @@ namespace proiect_ip
 
             return $"{minute:D2}:{secunde:D2}";
         }
->>>>>>> b208fcc7b0f283c8c9dcd040f1b3b77c33826fec
     }
 }
