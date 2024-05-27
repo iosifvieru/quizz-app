@@ -33,8 +33,8 @@ namespace proiect_ip
             // daca flagul isAdmin este != 0 at. utilizatorul este admininstrator.
             if(_user.Admin == 0)
             {
-                ButtonAdmin.Enabled = false;
-                ButtonAdmin.Visible = false;
+                buttonAdmin.Enabled = false;
+                buttonAdmin.Visible = false;
             }
         }
 
@@ -96,6 +96,7 @@ namespace proiect_ip
             }
 
             this.Controls.Add(listViewQuizes);
+            this.listViewQuizes.BringToFront();
 
             listViewQuizes.SelectedIndexChanged += ListView_SelectedIndexChanged;
         }
@@ -134,10 +135,21 @@ namespace proiect_ip
                 MessageBox.Show("Trebuie sa selectezi un quiz!");
         }
 
-        private void ButtonAdmin_Click(object sender, EventArgs e)
+
+
+        private static string ConvertToMinutes(uint seconds)
         {
-            
-            if(_user.Admin == 0)
+            uint minute = seconds / 60;
+            uint secunde = seconds % 60;
+
+            return $"{minute:D2}:{secunde:D2}";
+        }
+
+     
+
+        private void butonAdmin_Click(object sender, EventArgs e)
+        {
+            if (_user.Admin == 0)
             {
                 MessageBox.Show("Nu esti administrator");
                 return;
@@ -149,14 +161,6 @@ namespace proiect_ip
             adminPanelForm.Show();
 
             this.Hide();
-        }
-
-        private static string ConvertToMinutes(uint seconds)
-        {
-            uint minute = seconds / 60;
-            uint secunde = seconds % 60;
-
-            return $"{minute:D2}:{secunde:D2}";
         }
     }
 }

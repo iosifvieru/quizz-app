@@ -66,3 +66,27 @@ C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect_ip.QuizForm.resourc
 C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect-ip.exe.licenses
 C:\Users\tero\Desktop\proiect-ip\quizz-app\obj\Debug\proiect_ip.AdminPanel.resources
 D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\obj\Debug\proiect_ip.AdminPanel.resources
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\bin\Debug\x86\sqlite3.dll
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\bin\Debug\x64\sqlite3.dll
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\bin\Debug\proiect-ip.exe.config
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\bin\Debug\proiect-ip.exe
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\bin\Debug\proiect-ip.pdb
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\bin\Debug\Microsoft.VisualStudio.TestTools.UITest.Extension.dll
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\bin\Debug\Bunifu.UI.WinForms.xml
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\bin\Debug\EntityFramework.xml
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\bin\Debug\EntityFramework.SqlServer.xml
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\bin\Debug\System.Data.SQLite.xml
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\obj\Debug\proiect-ip.csproj.AssemblyReference.cache
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\obj\Debug\proiect_ip.AdminPanel.resources
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\obj\Debug\proiect_ip.Main_Menu.resources
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\obj\Debug\proiect_ip.QuizzesListForm.resources
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\obj\Debug\proiect_ip.QuizForm.resources
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\obj\Debug\proiect_ip.Properties.Resources.resources
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\obj\Debug\proiect_ip.Register_Form.resources
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\obj\Debug\proiect-ip.csproj.GenerateResource.cache
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\obj\Debug\proiect-ip.exe.licenses
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\obj\Debug\proiect-ip.csproj.CoreCompileInputs.cache
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\obj\Debug\proiect-ip.csproj.CopyComplete
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\obj\Debug\proiect-ip.exe
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\obj\Debug\proiect-ip.pdb

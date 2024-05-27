@@ -61,10 +61,10 @@
             this.groupBox1.Controls.Add(this.labelQuizTitle);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(931, 731);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(917, 731);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -74,7 +74,7 @@
             this.buttonSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSubmit.ForeColor = System.Drawing.Color.White;
             this.buttonSubmit.Location = new System.Drawing.Point(790, 648);
-            this.buttonSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSubmit.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSubmit.Name = "buttonSubmit";
             this.buttonSubmit.Size = new System.Drawing.Size(128, 39);
             this.buttonSubmit.TabIndex = 6;
@@ -100,7 +100,7 @@
             this.buttonNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNext.ForeColor = System.Drawing.Color.White;
             this.buttonNext.Location = new System.Drawing.Point(454, 648);
-            this.buttonNext.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonNext.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(128, 39);
             this.buttonNext.TabIndex = 4;
@@ -114,7 +114,7 @@
             this.buttonBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBack.ForeColor = System.Drawing.Color.White;
             this.buttonBack.Location = new System.Drawing.Point(309, 648);
-            this.buttonBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonBack.Margin = new System.Windows.Forms.Padding(2);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(128, 39);
             this.buttonBack.TabIndex = 3;
@@ -128,9 +128,9 @@
             this.groupBoxQuestion.Controls.Add(this.groupBoxAnswers);
             this.groupBoxQuestion.Controls.Add(this.textBoxQuestion);
             this.groupBoxQuestion.Location = new System.Drawing.Point(9, 65);
-            this.groupBoxQuestion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxQuestion.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxQuestion.Name = "groupBoxQuestion";
-            this.groupBoxQuestion.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxQuestion.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxQuestion.Size = new System.Drawing.Size(915, 577);
             this.groupBoxQuestion.TabIndex = 2;
             this.groupBoxQuestion.TabStop = false;
@@ -142,9 +142,9 @@
             this.groupBoxAnswers.Controls.Add(this.buttonAnswer2);
             this.groupBoxAnswers.Controls.Add(this.buttonAnswer1);
             this.groupBoxAnswers.Location = new System.Drawing.Point(4, 348);
-            this.groupBoxAnswers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxAnswers.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxAnswers.Name = "groupBoxAnswers";
-            this.groupBoxAnswers.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxAnswers.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxAnswers.Size = new System.Drawing.Size(906, 210);
             this.groupBoxAnswers.TabIndex = 1;
             this.groupBoxAnswers.TabStop = false;
@@ -156,7 +156,7 @@
             this.buttonAnswer4.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAnswer4.ForeColor = System.Drawing.Color.White;
             this.buttonAnswer4.Location = new System.Drawing.Point(2, 162);
-            this.buttonAnswer4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAnswer4.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAnswer4.Name = "buttonAnswer4";
             this.buttonAnswer4.Size = new System.Drawing.Size(902, 49);
             this.buttonAnswer4.TabIndex = 3;
@@ -171,7 +171,7 @@
             this.buttonAnswer3.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAnswer3.ForeColor = System.Drawing.Color.White;
             this.buttonAnswer3.Location = new System.Drawing.Point(2, 113);
-            this.buttonAnswer3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAnswer3.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAnswer3.Name = "buttonAnswer3";
             this.buttonAnswer3.Size = new System.Drawing.Size(902, 49);
             this.buttonAnswer3.TabIndex = 2;
@@ -186,7 +186,7 @@
             this.buttonAnswer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAnswer2.ForeColor = System.Drawing.Color.White;
             this.buttonAnswer2.Location = new System.Drawing.Point(2, 64);
-            this.buttonAnswer2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAnswer2.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAnswer2.Name = "buttonAnswer2";
             this.buttonAnswer2.Size = new System.Drawing.Size(902, 49);
             this.buttonAnswer2.TabIndex = 1;
@@ -201,7 +201,7 @@
             this.buttonAnswer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAnswer1.ForeColor = System.Drawing.Color.White;
             this.buttonAnswer1.Location = new System.Drawing.Point(2, 15);
-            this.buttonAnswer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAnswer1.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAnswer1.Name = "buttonAnswer1";
             this.buttonAnswer1.Size = new System.Drawing.Size(902, 49);
             this.buttonAnswer1.TabIndex = 0;
@@ -218,7 +218,7 @@
             this.textBoxQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.textBoxQuestion.HideSelection = false;
             this.textBoxQuestion.Location = new System.Drawing.Point(2, 15);
-            this.textBoxQuestion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxQuestion.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxQuestion.Multiline = true;
             this.textBoxQuestion.Name = "textBoxQuestion";
             this.textBoxQuestion.ReadOnly = true;
@@ -232,7 +232,7 @@
             this.labelQuizTime.Dock = System.Windows.Forms.DockStyle.Right;
             this.labelQuizTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelQuizTime.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelQuizTime.Location = new System.Drawing.Point(701, 15);
+            this.labelQuizTime.Location = new System.Drawing.Point(687, 15);
             this.labelQuizTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelQuizTime.Name = "labelQuizTime";
             this.labelQuizTime.Size = new System.Drawing.Size(228, 36);
@@ -258,11 +258,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(931, 609);
+            this.ClientSize = new System.Drawing.Size(917, 661);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "QuizForm";
-            this.Text = "QuizForm-App";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Quiz";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

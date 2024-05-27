@@ -43,12 +43,12 @@
             this.bunifuLabelMainUsername = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.bunifuTextBoxMainPassword = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.bunifuLabel4 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuButtonMainLogin = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
+            this.bunifuLabel4 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuTextBoxMainUsername = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuLabelMainPassword = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.bunifuButtonMainInregistrare = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
+            this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.bunifuPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -185,23 +185,6 @@
             this.bunifuTextBoxMainPassword.UseSystemPasswordChar = true;
             this.bunifuTextBoxMainPassword.WordWrap = true;
             // 
-            // bunifuLabel4
-            // 
-            this.bunifuLabel4.AllowParentOverrides = false;
-            this.bunifuLabel4.AutoEllipsis = false;
-            this.bunifuLabel4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel4.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel4.ForeColor = System.Drawing.Color.Navy;
-            this.bunifuLabel4.Location = new System.Drawing.Point(79, 149);
-            this.bunifuLabel4.Name = "bunifuLabel4";
-            this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel4.Size = new System.Drawing.Size(200, 21);
-            this.bunifuLabel4.TabIndex = 10;
-            this.bunifuLabel4.Text = "Nu ai cont? Inregistreaza-te ";
-            this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel4.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // bunifuButtonMainLogin
             // 
             this.bunifuButtonMainLogin.AllowAnimations = true;
@@ -275,11 +258,11 @@
             this.bunifuButtonMainLogin.OnIdleState.ForeColor = System.Drawing.Color.White;
             this.bunifuButtonMainLogin.OnIdleState.IconLeftImage = null;
             this.bunifuButtonMainLogin.OnIdleState.IconRightImage = null;
-            this.bunifuButtonMainLogin.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.bunifuButtonMainLogin.OnPressedState.BorderColor = System.Drawing.Color.Navy;
             this.bunifuButtonMainLogin.OnPressedState.BorderRadius = 30;
             this.bunifuButtonMainLogin.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
             this.bunifuButtonMainLogin.OnPressedState.BorderThickness = 1;
-            this.bunifuButtonMainLogin.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.bunifuButtonMainLogin.OnPressedState.FillColor = System.Drawing.Color.Navy;
             this.bunifuButtonMainLogin.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.bunifuButtonMainLogin.OnPressedState.IconLeftImage = null;
             this.bunifuButtonMainLogin.OnPressedState.IconRightImage = null;
@@ -291,6 +274,23 @@
             this.bunifuButtonMainLogin.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButtonMainLogin.UseDefaultRadiusAndThickness = true;
             this.bunifuButtonMainLogin.Click += new System.EventHandler(this.bunifuButton21_Click);
+            // 
+            // bunifuLabel4
+            // 
+            this.bunifuLabel4.AllowParentOverrides = false;
+            this.bunifuLabel4.AutoEllipsis = false;
+            this.bunifuLabel4.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel4.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel4.ForeColor = System.Drawing.Color.Navy;
+            this.bunifuLabel4.Location = new System.Drawing.Point(79, 149);
+            this.bunifuLabel4.Name = "bunifuLabel4";
+            this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel4.Size = new System.Drawing.Size(200, 21);
+            this.bunifuLabel4.TabIndex = 10;
+            this.bunifuLabel4.Text = "Nu ai cont? Înregistrează-te ";
+            this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel4.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // bunifuTextBoxMainUsername
             // 
@@ -385,22 +385,6 @@
             this.bunifuLabelMainPassword.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabelMainPassword.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuPictureBox1
-            // 
-            this.bunifuPictureBox1.AllowFocused = false;
-            this.bunifuPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bunifuPictureBox1.AutoSizeHeight = true;
-            this.bunifuPictureBox1.BorderRadius = 204;
-            this.bunifuPictureBox1.Image = global::proiect_ip.Properties.Resources.MainMenuImage1;
-            this.bunifuPictureBox1.IsCircle = true;
-            this.bunifuPictureBox1.Location = new System.Drawing.Point(462, 128);
-            this.bunifuPictureBox1.Name = "bunifuPictureBox1";
-            this.bunifuPictureBox1.Size = new System.Drawing.Size(408, 408);
-            this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuPictureBox1.TabIndex = 10;
-            this.bunifuPictureBox1.TabStop = false;
-            this.bunifuPictureBox1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
-            // 
             // bunifuButtonMainInregistrare
             // 
             this.bunifuButtonMainInregistrare.AllowAnimations = true;
@@ -491,6 +475,22 @@
             this.bunifuButtonMainInregistrare.UseDefaultRadiusAndThickness = true;
             this.bunifuButtonMainInregistrare.Click += new System.EventHandler(this.bunifuButtonMainInregistrare_Click);
             // 
+            // bunifuPictureBox1
+            // 
+            this.bunifuPictureBox1.AllowFocused = false;
+            this.bunifuPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bunifuPictureBox1.AutoSizeHeight = true;
+            this.bunifuPictureBox1.BorderRadius = 204;
+            this.bunifuPictureBox1.Image = global::proiect_ip.Properties.Resources.MainMenuImage1;
+            this.bunifuPictureBox1.IsCircle = true;
+            this.bunifuPictureBox1.Location = new System.Drawing.Point(462, 128);
+            this.bunifuPictureBox1.Name = "bunifuPictureBox1";
+            this.bunifuPictureBox1.Size = new System.Drawing.Size(408, 408);
+            this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuPictureBox1.TabIndex = 10;
+            this.bunifuPictureBox1.TabStop = false;
+            this.bunifuPictureBox1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
+            // 
             // Main_Menu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -502,12 +502,12 @@
             this.MaximizeBox = false;
             this.Name = "Main_Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "QuizForm App";
+            this.Text = "Autentificare";
             this.bunifuPanel1.ResumeLayout(false);
             this.bunifuPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.FormClosing += Main_Menu_FormClosing;
+
         }
 
         #endregion
