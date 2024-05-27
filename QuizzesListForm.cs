@@ -38,6 +38,7 @@ namespace proiect_ip
             }
         }
 
+        // Reimprospateaza lista cu quiz-uri.
         private void RefreshList()
         {
             foreach(ListViewItem item in listViewQuizes.Items)
@@ -50,6 +51,7 @@ namespace proiect_ip
 
         }
 
+        // Initializeaza lista cu quiz-uri.
         private void InitializeListView()
         {
             listViewQuizes.Clear();
@@ -101,6 +103,7 @@ namespace proiect_ip
             listViewQuizes.SelectedIndexChanged += ListView_SelectedIndexChanged;
         }
 
+        // Evenimentul care determina quiz-ul selectat.
         private void ListView_SelectedIndexChanged(object sender, EventArgs e)
         {
             ListView listView = sender as ListView;
@@ -113,31 +116,46 @@ namespace proiect_ip
             }
         }
 
+        // Evenimentul butonului care te intoarce la meniul precedent.
         private void buttonBack_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        // Evenimentul butonului care deschide un quiz.
         private void buttonOpenQuiz_Click(object sender, EventArgs e)
         {
             if (_selectedItem != null)
             {
-                QuizForm quizForm = new QuizForm((int)_selectedItem.Tag, _user.ID);
+                try
+                {
+                    QuizForm quizForm = new QuizForm((int)_selectedItem.Tag, _user.ID);
 
-                // daca fereasta Quizz este inchisa repare fereastra principala.
-                quizForm.FormClosed += (s, args) => { this.RefreshList(); this.Show(); };
-                quizForm.Show();
+                    // daca fereasta Quizz este inchisa repare fereastra principala.
+                    quizForm.FormClosed += (s, args) => { this.RefreshList(); this.Show(); };
+                    quizForm.Show();
 
-                // ascunde ferastra curenta.
-                this.Hide();
+                    // ascunde ferastra curenta.
+                    this.Hide();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Eroare la deschiderea quiz-ului: \n" + ex.Message);
+                }
             }
             else
                 MessageBox.Show("Trebuie sa selectezi un quiz!");
         }
 
+<<<<<<< HEAD
 
 
         private static string ConvertToMinutes(uint seconds)
+=======
+        // Evenimentul specific butonului de Admin
+        // Deschide meniul de Admin daca utilizatorul are permisiuniea.
+        private void ButtonAdmin_Click(object sender, EventArgs e)
+>>>>>>> b208fcc7b0f283c8c9dcd040f1b3b77c33826fec
         {
             uint minute = seconds / 60;
             uint secunde = seconds % 60;
@@ -162,5 +180,21 @@ namespace proiect_ip
 
             this.Hide();
         }
+<<<<<<< HEAD
+=======
+
+        /// <summary>
+        /// Converteste un numar in minute si secunde.
+        /// </summary>
+        /// <param name="seconds">Numarul de secunde</param>
+        /// <returns>String-ul ce contine numarul in noul format</returns>
+        private static string ConvertToMinutes(uint seconds)
+        {
+            uint minute = seconds / 60;
+            uint secunde = seconds % 60;
+
+            return $"{minute:D2}:{secunde:D2}";
+        }
+>>>>>>> b208fcc7b0f283c8c9dcd040f1b3b77c33826fec
     }
 }

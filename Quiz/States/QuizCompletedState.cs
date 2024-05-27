@@ -36,11 +36,19 @@ namespace proiect_ip.Quiz.States
         public void ShowQuestion()
         {
             Question question = _quiz.GetQuestion();
+
+            if (question.GetQuestion == null)
+                throw new Exception("Intrebarea curenta nu are text!");
+
             _quizForm.labelQuizTitle.Text = _quiz.GetTitle;
 
             _quizForm.textBoxQuestion.Text = question.GetQuestion;
 
             _answers = _quiz.GetAnswers();
+
+            if (_answers.Count != 4)
+                throw new Exception("Intrebarea nu are un numar valid de raspunsuri!");
+
             answerButtons = new List<Button>();
 
 
@@ -60,6 +68,7 @@ namespace proiect_ip.Quiz.States
             }
 
             int userAnswer = _userAnswers[_quiz.GetCurrentQuestionNumber];
+
             if (userAnswer != -1)
             {
                 answerButtons[userAnswer].BackColor = Color.Gold;
@@ -93,6 +102,11 @@ namespace proiect_ip.Quiz.States
         // Butonul aici nu are semnificatie de 'Submit', ci de 'Retry'
         public void SubmitAnswers()
         {
+            if (_quiz.UserId == -1)
+                throw new ArgumentNullException("Quiz-ul nu are un utilizator!");
+            if (_quiz.GetQuizId == -1)
+                throw new ArgumentNullException("Quiz-ul nu are un ID valid");
+
             _quizController.DeleteQuizProgress(_quiz.UserId, _quiz.GetQuizId);
             _quizForm.Close();
         }

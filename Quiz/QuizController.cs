@@ -20,11 +20,19 @@ namespace proiect_ip.Quiz
 
         private IDatabase _database;
 
+        /// <summary>
+        /// Constructorul clasei <class>QuizController</class>
+        /// Obtine o instanta a bazei de date.
+        /// </summary>
         public QuizController()
         {
             _database = SQLite.GetInstance();
         }
 
+        /// <summary>
+        /// Returneaza o lista cu toate quiz-urile din baza de date.
+        /// </summary>
+        /// <returns></returns>
         public List<Quiz> GetAllQuizzes()
         {
             string query = "SELECT * FROM quiz";
@@ -61,6 +69,11 @@ namespace proiect_ip.Quiz
             return quizzesList;
         }
 
+        /// <summary>
+        /// Returneaza un obiect de tip <class>Quiz</class> corespunzator Id-ului din baza de date.
+        /// </summary>
+        /// <param name="quizId">ID-ul quiz-ului</param>
+        /// <returns>Un obiect de tip Quiz</returns>
         public Quiz GetQuiz(int quizId)
         {
             string query = "SELECT * FROM quiz WHERE id='" + quizId + "'";
@@ -89,6 +102,11 @@ namespace proiect_ip.Quiz
             return quiz;
         }
 
+        /// <summary>
+        /// Returneaza lista de raspunsuri corespunzatoare intrebarii.
+        /// </summary>
+        /// <param name="questionId">Id-ul intrebarii</param>
+        /// <returns>O lista de raspunsuri</returns>
         public List<Answer> GetQuestionAnswers(int questionId)
         {
             string query = "SELECT * FROM answer WHERE questionId='" + questionId + "'";
@@ -122,6 +140,11 @@ namespace proiect_ip.Quiz
             return answers;
         }
 
+        /// <summary>
+        /// Returneaza lista de intrebari corespunzatoare quiz-ului.
+        /// </summary>
+        /// <param name="quizId">ID-ul quiz-ului</param>
+        /// <returns>O lista de intrebari</returns>
         public List<Question> GetQuizQuestions(int quizId)
         {
             string query = "SELECT * FROM question WHERE quizId='" + quizId + "'";
@@ -146,13 +169,24 @@ namespace proiect_ip.Quiz
             return questions;
         }
 
+        /// <summary>
+        /// Adauga un Quiz in baza de date
+        /// </summary>
+        /// <param name="titlu">Titlul quiz-ului</param>
+        /// <returns>True - daca a fost inserat cu succes si false in caz contrar</returns>
         public bool AddQuiz(string titlu)
         {
             string query = "INSERT INTO quiz (title, isVisible) VALUES ('" + titlu + "', 1);";
             _database.ExecuteNonQuery(query);
             return true;
         }
-
+        
+        /// <summary>
+        /// Modifica intrebarea unui quiz din baza de date.
+        /// </summary>
+        /// <param name="quizId">ID-ul quiz-ului</param>
+        /// <param name="question">Intrebarea</param>
+        /// <returns>True daca a fost modificata cu succes si false in caz contrar</returns>
         public bool EditQuizQuestion(int quizId, Question question)
         {
             string query = "UPDATE question SET question='"+ question.GetQuestion + "' WHERE id='"+ question.ID +"'";
@@ -167,6 +201,11 @@ namespace proiect_ip.Quiz
             return true;
         }
 
+        /// <summary>
+        /// Sterge o intrebare din baza de date.
+        /// </summary>
+        /// <param name="quizId">ID-ul quiz-ului</param>
+        /// <returns>True daca a fost stearsa cu succes si false in caz contrar</returns>
         public bool DeleteQuizQuestion(int quizId)
         {
             string query = "DELETE FROM question WHERE id=' " + quizId + "'";
@@ -175,6 +214,12 @@ namespace proiect_ip.Quiz
             return true;
         }
 
+        /// <summary>
+        /// Adauga o intrebare unui Quiz.
+        /// </summary>
+        /// <param name="quizId">ID-ul quiz-ului</param>
+        /// <param name="question">Intrebarea</param>
+        /// <returns>True daca a fost adaugata cu succes si false in caz contrar.</returns>
         public bool AddQuizQuestion(int quizId, Question question)
         {
             string query = "INSERT INTO question (quizId, question, score) VALUES ('" + quizId + "', '" + question.GetQuestion +"', '" + question.GetScore + "')";
@@ -198,6 +243,11 @@ namespace proiect_ip.Quiz
         }
 
         // "soft" delete, doar modifica parametrul isVisible, practic il ascunde mai bine spus.
+        /// <summary>
+        /// Modifica flag-ul unui Quiz astfel incat sa apara doar in meniul de admin.
+        /// </summary>
+        /// <param name="quizId">ID-ul quizului</param>
+        /// <returns>True daca a fost modificat cu succes si false in caz contrar.</returns>
         public bool DeleteQuiz(int quizId)
         {
             string query = "UPDATE quiz SET isVisible = 0 WHERE id = '" + quizId +"'";
@@ -205,6 +255,12 @@ namespace proiect_ip.Quiz
             return true;
         }
 
+        /// <summary>
+        /// Obtine lista cu raspunsurile utilizatorului pentru un quiz
+        /// </summary>
+        /// <param name="userId">ID-ul utilizatorului</param>
+        /// <param name="quizId">ID-ul quiz-ului</param>
+        /// <returns>O lista cu raspunsurile</returns>
         public List<int> GetQuizUserAnswers(int userId, int quizId)
         {
             string query = "SELECT answers FROM userAnswer WHERE userId='" + userId + "' AND quizId='" + quizId + "';";
@@ -227,6 +283,12 @@ namespace proiect_ip.Quiz
             return answers;
         }
 
+        /// <summary>
+        /// Sterge progresul unui utilizator pentru un anumit quiz
+        /// </summary>
+        /// <param name="userId">ID-ul utilizatorului</param>
+        /// <param name="quizId">ID-ul quiz-ului</param>
+        /// <returns>True daca a fost sters cu succes si false in caz contrar.</returns>
         public bool DeleteQuizProgress(int userId, int quizId)
         {
             string query = "DELETE FROM userAnswer WHERE userId='" + userId + "' AND quizId='" + quizId + "';";
@@ -235,6 +297,12 @@ namespace proiect_ip.Quiz
             return false;
         }
 
+        /// <summary>
+        /// Returneaza scorul unui utilizator pentru un anumit quiz
+        /// </summary>
+        /// <param name="userId">ID-ul utilizatorului</param>
+        /// <param name="quizId">ID-ul quiz-ului</param>
+        /// <returns>Scorul sau -1 daca nu a fost completat quiz-ul.</returns>
         public int GetQuizUserScore(int userId, int quizId)
         {
             string query = "SELECT score FROM userAnswer WHERE userId='" + userId + "' AND quizId='" + quizId + "';";
@@ -253,6 +321,12 @@ namespace proiect_ip.Quiz
             return score;
         }
 
+        /// <summary>
+        /// Returneaza timpul petrecut pe un Quiz al utilizatorului.
+        /// </summary>
+        /// <param name="userId">ID-ul utilizatorului</param>
+        /// <param name="quizId">ID-ul quiz-ului</param>
+        /// <returns>Timpul petrecut pe quiz</returns>
         public int GetQuizUserTime(int userId, int quizId)
         {
             string query = "SELECT time FROM userAnswer WHERE userId='" + userId + "' AND quizId='" + quizId + "';";
@@ -268,6 +342,12 @@ namespace proiect_ip.Quiz
             return time;
         }
 
+        /// <summary>
+        /// Returneaza statusul quiz-ului pentru utilizator.
+        /// </summary>
+        /// <param name="userId">ID-ul utilizatorului</param>
+        /// <param name="quizId">ID-ul quiz-ului</param>
+        /// <returns>Statusul quiz-ului</returns>
         public String GetQuizStatus(int userId, int quizId)
         {
             string query = "SELECT status FROM userAnswer WHERE userId='" + userId + "' AND quizId='" + quizId + "';";
@@ -283,6 +363,16 @@ namespace proiect_ip.Quiz
             return status;
         }
 
+        /// <summary>
+        /// Salveaza raspunsurile unui utilizator la un anumit Quiz
+        /// </summary>
+        /// <param name="userId">ID-ul utilizatorului</param>
+        /// <param name="quizId">ID-ul quiz-ului</param>
+        /// <param name="answers">String-ul cu raspunsuri</param>
+        /// <param name="time">Timpul petrecut pe Quiz</param>
+        /// <param name="status">Statusul quiz-ului</param>
+        /// <param name="score">Scorul quiz-ului</param>
+        /// <returns>True daca a fost salvat cu succes si false in caz contrar.</returns>
         public bool SaveQuizAnswers(int userId, int quizId, String answers, int time, String status, int score)
         {
             string query = "SELECT * FROM userAnswer WHERE userId='" + userId + "' AND quizId='" + quizId  + "';";
@@ -301,18 +391,5 @@ namespace proiect_ip.Quiz
             }
             return false;
         }
-
-        // To be inplemented
-
-        // Instantiem un sqlite
-        // Metode pentru: addQuiz, addQuestion, addAnswer, etc. (le preluam din baza de date)
-
-        // Practic, prima data facem un select pentru 'quiz'
-        // Pentru fiecare id din quiz, facem un select pentru 'question' 
-        // Pentru fiecare id din question, facem un select pentru 'answer'
-        // Instantiem obiecte de tip Answer -> Question -> Quiz
-        // Se apeleaza metodele corespunzatoare pentru a le adauga in liste.
-
-        // Vor fi metode si pentru modul de admin (pentru a adauga/edita/sterge quiz-uri, intrebari, etc)
     }
 }

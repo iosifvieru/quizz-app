@@ -18,6 +18,10 @@ namespace proiect_ip
         private Quiz.Quiz _quiz;
         private int _userId;
 
+        // Constructorul clasei QuizForm
+        // Preia Quiz-ul din baza de date
+        // Populeaza quiz-ul cu intrebari si raspunsuri
+        // Determina statusul quiz-ului si il deschide.
         public QuizForm(int quizId, int userId)
         {
             InitializeComponent();
@@ -50,21 +54,28 @@ namespace proiect_ip
 
         }
 
+        // Evenimentul butonului de Back
+        // Apeleaza metoda corespunzatoare din Quiz pentru a trece la intrebarea precedenta.
         private void buttonBack_Click(object sender, EventArgs e)
         {
             _quiz.PreviousQuestion();
         }
 
+        // Evenimentul butonului Next
+        // Apeleaza metoda corespunzatoare din Quiz pentru a trece la intrebarea urmatoare.
         private void buttonNext_Click(object sender, EventArgs e)
         {
             _quiz.NextQuestion();
         }
 
+        // Evenimentul butonului de submit
+        // Apeleaza metoda de Submit corespunzatoare quiz-ului.
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
             _quiz.SubmitAnswers();
         }
 
+        // Evenimentul de inchidere al form-ului.
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
