@@ -9,7 +9,7 @@ namespace proiect_ip.Quiz
     public class Question
     {
         private int _id;
-        private String _question;
+        private String _question = null;
         private List<Answer> _answers;
         private int _score;
 

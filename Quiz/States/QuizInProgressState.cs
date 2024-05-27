@@ -53,9 +53,16 @@ namespace proiect_ip.Quiz.States
 
             _quizForm.labelQuizTitle.Text = _quiz.GetTitle;
 
+            if (_quiz.GetQuestions[_quiz.GetCurrentQuestionNumber].GetQuestion == null)
+                throw new Exception("Intrebarea curenta nu are text!");
+
             _quizForm.textBoxQuestion.Text = _quiz.GetQuestions[_quiz.GetCurrentQuestionNumber].GetQuestion;
 
             _answers = _quiz.GetQuestions[_quiz.GetCurrentQuestionNumber].GetAnswers;
+
+            if (_answers.Count != 4)
+                throw new Exception("Intrebarea nu are un numar valid de raspunsuri!");
+
             answerButtons = new List<Button>();
 
             _quizForm.buttonAnswer1.Text = "A) " + _answers[0].GetAnswerText;
@@ -114,6 +121,11 @@ namespace proiect_ip.Quiz.States
         // Calculeaza scorul, salveaza raspunsurile si marcheaza quiz-ul ca fiind completat.
         public void SubmitAnswers()
         {
+            if (_quiz.UserId == -1)
+                throw new ArgumentNullException("Quiz-ul nu are un utilizator!");
+            if (_quiz.GetQuizId == -1)
+                throw new ArgumentNullException("Quiz-ul nu are un ID valid");
+
             List<int> userAnswers = _quiz.GetUserAnswers;
             List<Question> quizQuestions = _quiz.GetQuestions;
             String answersString = "";
@@ -132,6 +144,13 @@ namespace proiect_ip.Quiz.States
                     }
                 }
             }
+            else
+            {
+                if (userAnswers.Count == 0)
+                    throw new Exception("Utilizatorul nu are raspunsuri!");
+                else if (quizQuestions.Count == 0)
+                    throw new Exception("Quiz-ul nu are intrebari!");
+            }
             _quizController.SaveQuizAnswers(_quiz.UserId, _quiz.GetQuizId, answersString, _quiz.GetQuizTime, "Completed", score);
             _quiz.SetState(new QuizCompletedState());
             _quizForm.Close();
@@ -148,6 +167,8 @@ namespace proiect_ip.Quiz.States
                 for (int i = 0; i < userAnswers.Count; i++)
                     answersString += (userAnswers[i] + "_");
             }
+            else
+                throw new Exception("Utilizatorul nu are raspunsuri!");
             _quizController.SaveQuizAnswers(_quiz.UserId, _quiz.GetQuizId, answersString, _quiz.GetQuizTime, "In Progress", -1);
         }
 

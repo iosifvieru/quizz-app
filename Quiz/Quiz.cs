@@ -12,7 +12,7 @@ namespace proiect_ip.Quiz
     {
         private IQuizState _quizState;
 
-        private int _quizId;
+        private int _quizId = -1;
         private string _quizName;
         private int _score;
         private int _maxScore;
@@ -21,7 +21,7 @@ namespace proiect_ip.Quiz
         private List<int> _userAnswers;
         private int _currentQuestion;
         private int _quizTime;
-        private int _userId;
+        private int _userId = -1;
 
 
         /// <summary>
@@ -87,6 +87,8 @@ namespace proiect_ip.Quiz
         /// <returns>O lista de intrebari</returns>
         public List<Answer> GetAnswers()
         {
+            if (_questions[_currentQuestion] == null)
+                throw new Exception("Intrebarea curenta nu exista!");
             return _questions[_currentQuestion].GetAnswers;
         }
 
@@ -189,6 +191,8 @@ namespace proiect_ip.Quiz
         /// <param name="answer">ID-ul raspunsului</param>
         public void SetUserAnswer(int questionId, int answer)
         {
+            if (answer < -1 || answer > 3)
+                throw new Exception("Index-ul raspunsului nu este valid!");
             _userAnswers[questionId] = answer;
         }
 
@@ -211,6 +215,8 @@ namespace proiect_ip.Quiz
         /// <param name="quizTime">Timpul (int)</param>
         public void SetQuizTime(int quizTime)
         {
+            if (quizTime < 0)
+                throw new Exception("Timpul quiz-ului nu poate fi negativ!");
             _quizTime = quizTime;
         }
 

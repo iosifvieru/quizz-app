@@ -126,14 +126,21 @@ namespace proiect_ip
         {
             if (_selectedItem != null)
             {
-                QuizForm quizForm = new QuizForm((int)_selectedItem.Tag, _user.ID);
+                try
+                {
+                    QuizForm quizForm = new QuizForm((int)_selectedItem.Tag, _user.ID);
 
-                // daca fereasta Quizz este inchisa repare fereastra principala.
-                quizForm.FormClosed += (s, args) => { this.RefreshList(); this.Show(); };
-                quizForm.Show();
+                    // daca fereasta Quizz este inchisa repare fereastra principala.
+                    quizForm.FormClosed += (s, args) => { this.RefreshList(); this.Show(); };
+                    quizForm.Show();
 
-                // ascunde ferastra curenta.
-                this.Hide();
+                    // ascunde ferastra curenta.
+                    this.Hide();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Eroare la deschiderea quiz-ului: \n" + ex.Message);
+                }
             }
             else
                 MessageBox.Show("Trebuie sa selectezi un quiz!");
