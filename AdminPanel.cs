@@ -20,6 +20,8 @@ namespace proiect_ip
         private int selectedQuestion = -1;
         public AdminPanel(List<Quiz.Quiz> quizzez)
         {
+    
+
             InitializeComponent();
             _quizzes = quizzez;
             _quizController = new QuizController();
@@ -39,6 +41,8 @@ namespace proiect_ip
             listViewQuizes.Columns.Add("Quiz Name", 250);
             listViewQuizes.Columns.Add("Questions", 100);
 
+
+
             foreach (Quiz.Quiz quiz in _quizzes)
             {
                 quiz.SetQuestions(_quizController.GetQuizQuestions(quiz.GetQuizId));
@@ -50,6 +54,7 @@ namespace proiect_ip
                 if(quiz.IsVisible == true)
                 {
                     listViewQuizes.Items.Add(item);
+                    
                 }
 
                 // pt modul de admin, quiz urile trecute ca fiind invizibile vor aparea taiate.
@@ -60,10 +65,12 @@ namespace proiect_ip
                     item.Font = strikeoutFont;
 
                     listViewQuizes.Items.Add(item);
+                  
                 }
             }
 
-            this.Controls.Add(listViewQuizes);
+          //  this.Controls.Add(listViewQuizes);
+
 
         }
         private void InitializeQuestionView()
@@ -112,6 +119,8 @@ namespace proiect_ip
                 listViewQuestions.Items.Clear();
             }
         }
+
+
 
         private void PopulateLabels(int index)
         {
@@ -217,6 +226,7 @@ namespace proiect_ip
         private void RefreshListView()
         {
             listViewQuizes.Clear();
+          
             listViewQuestions.Clear();
 
             _quizzes = _quizController.GetAllQuizzes();

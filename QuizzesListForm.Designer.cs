@@ -128,11 +128,10 @@
             this.bunifuPanel1.Controls.Add(this.labelTitle);
             this.bunifuPanel1.Controls.Add(this.buttonBack);
             this.bunifuPanel1.Controls.Add(this.buttonOpenQuiz);
-            this.bunifuPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuPanel1.Location = new System.Drawing.Point(0, 0);
+            this.bunifuPanel1.Location = new System.Drawing.Point(-8, -4);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
-            this.bunifuPanel1.Size = new System.Drawing.Size(917, 661);
+            this.bunifuPanel1.Size = new System.Drawing.Size(933, 700);
             this.bunifuPanel1.TabIndex = 8;
             // 
             // buttonAdmin
@@ -182,7 +181,7 @@
             this.buttonAdmin.IdleIconLeftImage = null;
             this.buttonAdmin.IdleIconRightImage = null;
             this.buttonAdmin.IndicateFocus = false;
-            this.buttonAdmin.Location = new System.Drawing.Point(12, 610);
+            this.buttonAdmin.Location = new System.Drawing.Point(21, 610);
             this.buttonAdmin.Name = "buttonAdmin";
             this.buttonAdmin.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.buttonAdmin.OnDisabledState.BorderRadius = 20;
@@ -235,7 +234,7 @@
             this.labelQuizStatus.Location = new System.Drawing.Point(138, 515);
             this.labelQuizStatus.Name = "labelQuizStatus";
             this.labelQuizStatus.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.labelQuizStatus.Size = new System.Drawing.Size(172, 30);
+            this.labelQuizStatus.Size = new System.Drawing.Size(188, 30);
             this.labelQuizStatus.TabIndex = 12;
             this.labelQuizStatus.Text = "Status: Not Started";
             this.labelQuizStatus.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
