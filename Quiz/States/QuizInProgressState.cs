@@ -78,7 +78,7 @@ namespace proiect_ip.Quiz.States
             foreach (Button button in answerButtons)
             {
                 if (button.BackColor == Color.Gold)
-                    button.BackColor = Color.DarkGray;
+                    button.BackColor = Color.Navy;
             }
 
             int userAnswer = _quiz.GetUserAnswer(_quiz.GetCurrentQuestionNumber);
@@ -89,7 +89,7 @@ namespace proiect_ip.Quiz.States
 
             // Handle Buttons
 
-            _quizForm.buttonSubmit.Text = "Submit";
+            //_quizForm.buttonSubmit. = "Submit";
 
             if (_quiz.GetCurrentQuestionNumber > 0)
                 _quizForm.buttonBack.Visible = true;
@@ -115,7 +115,7 @@ namespace proiect_ip.Quiz.States
 
             // Labels
 
-            _quizForm.labelCurrentQuestion.Text = "Question: " + (_quiz.GetCurrentQuestionNumber + 1) + " / " + _quiz.GetQuestions.Count;
+            _quizForm.labelCurrentQuestion.Text = "Întrebarea: " + (_quiz.GetCurrentQuestionNumber + 1) + " / " + _quiz.GetQuestions.Count;
         }
 
         // Calculeaza scorul, salveaza raspunsurile si marcheaza quiz-ul ca fiind completat.
@@ -177,7 +177,7 @@ namespace proiect_ip.Quiz.States
         private void TimerTimpScurs_Tick(object sender, EventArgs e)
         {
             _quiz.IncrementQuizTime();
-            _quizForm.labelQuizTime.Text = "Contor Timp: " + ConvertToMinutes((uint)_quiz.GetQuizTime);
+            _quizForm.labelQuizTime.Text = "Contor timp: " + ConvertToMinutes((uint)_quiz.GetQuizTime);
         }
 
         // Converteste secundele in formatul: {x}:{y}
@@ -197,7 +197,7 @@ namespace proiect_ip.Quiz.States
             foreach (Button button in answerButtons)
             {
                 if (button.BackColor == Color.Gold)
-                    button.BackColor = Color.DarkGray;
+                    button.BackColor = Color.Navy;
             }
 
             Button selectedButton = (Button)sender;

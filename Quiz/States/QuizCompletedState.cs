@@ -64,7 +64,8 @@ namespace proiect_ip.Quiz.States
 
             foreach (Button button in answerButtons)
             {
-                button.BackColor = Color.DarkGray;
+                //button.BackColor = Color.DarkGray;
+                button.BackColor = Color.Navy;
             }
 
             int userAnswer = _userAnswers[_quiz.GetCurrentQuestionNumber];
@@ -80,7 +81,12 @@ namespace proiect_ip.Quiz.States
             // Handle Buttons
 
             _quizForm.buttonSubmit.Visible = true;
-            _quizForm.buttonSubmit.Text = "Retry";
+            //_quizForm.buttonSubmit.Text = "Retry";
+            //_quizForm.buttonSubmit.IdleFillColor = Color.Red;
+            _quizForm.buttonSubmit.OnIdleState.IconLeftImage = global::proiect_ip.Properties.Resources.replay_white;
+            _quizForm.buttonSubmit.onHoverState.IconLeftImage = global::proiect_ip.Properties.Resources.replay_green;
+            _quizForm.buttonSubmit.OnPressedState.IconLeftImage = global::proiect_ip.Properties.Resources.replay_green;
+
 
             if (_quiz.GetCurrentQuestionNumber > 0)
                 _quizForm.buttonBack.Visible = true;

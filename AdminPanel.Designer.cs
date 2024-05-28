@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminPanel));
             this.listViewQuizes = new System.Windows.Forms.ListView();
             this.listViewQuestions = new System.Windows.Forms.ListView();
             this.textBoxIntrebare = new System.Windows.Forms.TextBox();
@@ -307,6 +308,7 @@
             this.Controls.Add(this.listViewQuizes);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminPanel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Panou admin";

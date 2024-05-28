@@ -118,40 +118,88 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="RegisterLogo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\RegisterLogo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="RegisterLogo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\RegisterLogo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="RegisterLogo21" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\RegisterLogo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="RegisterLogo22" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\RegisterLogo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="MainMenuImage13" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\MainMenuImage1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chevron-left-black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\chevron-left-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chevron-right-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\chevron-right-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MainMenuImage1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\MainMenuImage1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MainMenuLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\MainMenuLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="RegisterLogo22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\RegisterLogo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RegisterLogo11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\RegisterLogo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="RegisterLogo12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="check-green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\check-green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="check-green1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\check-green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="check-navy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\check-navy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="check-navy1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\check-navy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegisterLogo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\RegisterLogo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="check-black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\check-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MainMenuImage12" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\MainMenuImage1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MainMenuImage11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\MainMenuImage1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="check-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\check-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegisterLogo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\RegisterLogo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RegisterLogo23" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\RegisterLogo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chvron-right-navy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\chvron-right-navy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MainMenuLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\MainMenuLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="check-white1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\check-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MainMenuImage11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\MainMenuImage1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegisterLogo21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\RegisterLogo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegisterLogo12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\RegisterLogo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="check-white2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\check-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chvevron-right-black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\chvevron-right-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chevron-left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chevron-left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="replay-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\replay-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chevron-left-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\chevron-left-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="replay-green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\replay-green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

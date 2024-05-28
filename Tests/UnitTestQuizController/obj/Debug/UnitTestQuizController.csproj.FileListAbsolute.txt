@@ -27,3 +27,32 @@ D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\Tests\UnitTestQuizContro
 D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\Tests\UnitTestQuizController\bin\Debug\System.Data.SQLite.Linq.dll
 D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\Tests\UnitTestQuizController\bin\Debug\EntityFramework.dll
 D:\Projects\Visual Studio Projects\Proiect IP\quizz-app\Tests\UnitTestQuizController\bin\Debug\EntityFramework.xml
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\Tests\UnitTestQuizController\bin\Debug\x86\sqlite3.dll
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\Tests\UnitTestQuizController\bin\Debug\x64\sqlite3.dll
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\Tests\UnitTestQuizController\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\Tests\UnitTestQuizController\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\Tests\UnitTestQuizController\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\Tests\UnitTestQuizController\bin\Debug\Microsoft.TestPlatform.AdapterUtilities.dll
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\Tests\UnitTestQuizController\bin\Debug\UnitTestQuizController.dll
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\Tests\UnitTestQuizController\bin\Debug\UnitTestQuizController.pdb
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\Tests\UnitTestQuizController\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\Tests\UnitTestQuizController\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\Tests\UnitTestQuizController\bin\Debug\proiect-ip.exe
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\Tests\UnitTestQuizController\bin\Debug\System.Data.SQLite.dll
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\Tests\UnitTestQuizController\bin\Debug\System.Data.SQLite.EF6.dll
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\Tests\UnitTestQuizController\bin\Debug\System.Data.SQLite.Linq.dll
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\Tests\UnitTestQuizController\bin\Debug\Bunifu.UI.WinForms.dll
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\Tests\UnitTestQuizController\bin\Debug\EntityFramework.dll
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\Tests\UnitTestQuizController\bin\Debug\Bunifu.Licensing.dll
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\Tests\UnitTestQuizController\bin\Debug\proiect-ip.pdb
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\Tests\UnitTestQuizController\bin\Debug\proiect-ip.exe.config
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\Tests\UnitTestQuizController\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\Tests\UnitTestQuizController\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\Tests\UnitTestQuizController\bin\Debug\System.Data.SQLite.xml
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\Tests\UnitTestQuizController\bin\Debug\Bunifu.UI.WinForms.xml
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\Tests\UnitTestQuizController\bin\Debug\EntityFramework.xml
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\Tests\UnitTestQuizController\obj\Debug\UnitTestQuizController.csproj.AssemblyReference.cache
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\Tests\UnitTestQuizController\obj\Debug\UnitTestQuizController.csproj.CoreCompileInputs.cache
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\Tests\UnitTestQuizController\obj\Debug\UnitTestQuizController.csproj.CopyComplete
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\Tests\UnitTestQuizController\obj\Debug\UnitTestQuizController.dll
+D:\Facultate\An III\Sem II\IP\Proiect\quizz-app\Tests\UnitTestQuizController\obj\Debug\UnitTestQuizController.pdb
