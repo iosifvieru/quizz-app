@@ -1,10 +1,24 @@
-﻿/*
-    Baza de date
-
-    SQLite
-
-    Singleton
-*/
+﻿/**************************************************************************
+ *                                                                        *
+ *  File:        SQLite.cs                                                *
+ *  Copyright:   (c) 2024, Vieru Iosif,                                   *
+ *                         Georgita Adrian,                               *
+ *                         Talida Caraman,                                *
+ *                         Pricop Matei-Ioan                              *
+ *  E-mail:      iosif.vieru@student.tuiasi.ro,                           *
+ *               adrian.georgita@student.tuiasi.ro,                       *
+ *               talida.caraman@student.tuiasi.ro,                        *
+ *               matei-ioan.pricop@student.tuiasi.ro                      *
+ *  Description: Baza de date.                                            *
+ *                                                                        *
+ *  This program is free software; you can redistribute it and/or modify  *
+ *  it under the terms of the GNU General Public License as published by  *
+ *  the Free Software Foundation. This program is distributed in the      *
+ *  hope that it will be useful, but WITHOUT ANY WARRANTY; without even   *
+ *  the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR   *
+ *  PURPOSE. See the GNU General Public License for more details.         *
+ *                                                                        *
+ **************************************************************************/
 
 using System;
 using System.Collections.Generic;
@@ -18,10 +32,21 @@ using System.Data;
 
 namespace proiect_ip.Database
 {
+    /// <summary>
+    /// Implementeaza IDatabase
+    /// </summary>
     public class SQLite: IDatabase
     {
+        /// <summary>
+        /// Este implementata folosind Singleton Design Pattern
+        /// </summary>
         private static SQLite _instance;
         private SQLiteConnection database;
+        
+        /// <summary>
+        /// Constructor.
+        /// Creaza tabelele.
+        /// </summary>
         private SQLite()
         {
             this.database = new SQLiteConnection("Data Source=database.db");
@@ -33,6 +58,10 @@ namespace proiect_ip.Database
             CreateUserAnswersTable();
         }
 
+        /// <summary>
+        /// Metoda statica ce returneaza instanta _database. 
+        /// </summary>
+        /// <returns>Instanta bazei de date.</returns>
         public static SQLite GetInstance()
         {
             if(_instance == null)
@@ -43,7 +72,9 @@ namespace proiect_ip.Database
         }
 
         
-        // metoda ce creaza tabelul users
+        /// <summary>
+        /// Creaza tabelul "user"
+        /// </summary>
         public void CreateUserTable()
         {
             try
@@ -64,7 +95,9 @@ namespace proiect_ip.Database
             }
         }
 
-        // Metoda ce creaza tabelul quiz
+        /// <summary>
+        /// Creaza tabelul "quiz"
+        /// </summary>
         public void CreateQuizesTable()
         {
             try
@@ -87,7 +120,9 @@ namespace proiect_ip.Database
             }
         }
 
-        // Metoda ce creaza tabelul question
+        /// <summary>
+        /// Creaza tabelul question
+        /// </summary>
         public void CreateQuestionsTable()
         {
             try
@@ -110,7 +145,9 @@ namespace proiect_ip.Database
             }
         }
 
-        // Metoda ce creaza tabelul answer
+        /// <summary>
+        /// Creaza tabelul "answer"
+        /// </summary>
         public void CreateAnswersTable()
         {
             try
@@ -133,7 +170,9 @@ namespace proiect_ip.Database
             }
         }
 
-        // Metoda ce creaza tabelul userAnswer
+        /// <summary>
+        /// Creaza tabelul userAnswer
+        /// </summary>
         public void CreateUserAnswersTable()
         {
             try

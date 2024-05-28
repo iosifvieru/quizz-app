@@ -3,6 +3,7 @@ using System;
 using proiect_ip;
 using proiect_ip.Quiz;
 using System.Collections.Generic;
+using proiect_ip.Quiz.States;
 
 namespace UnitTestQuizController
 {
@@ -79,6 +80,72 @@ namespace UnitTestQuizController
             int actualValue = _quizController.GetQuizUserTime(2, 4);
 
             Assert.AreNotEqual(expectedValue, actualValue);
+        }
+
+
+        [TestMethod]
+        public void TestQuizSavingPositive()
+        {
+            int expectedValue = 70;
+            int actualValue;
+
+            int testUserId = 999;
+            String answersString = "0_1_0_0_1_0_1_2_"; 
+            List<int> userAnswers = new List<int> { 0, 1, 0, 0, 1, 0, 1, 2 };
+            /*Quiz newQuiz = new Quiz(3, "Test", false);
+            newQuiz.SetQuestions(_quizController.GetQuizQuestions(3));
+            newQuiz.SetState(new QuizInProgressState());
+            newQuiz.UserId = testUserId;
+            for(int i=0;i<userAnswers.Count;i++)
+                newQuiz.SetUserAnswer(i, userAnswers[i]);*/
+
+            _quizController.SaveQuizAnswers(testUserId, 3, answersString, 61, "Completed", 70);
+
+            actualValue = _quizController.GetQuizUserScore(testUserId, 3);
+
+            Assert.AreEqual(expectedValue, actualValue);
+
+        }
+
+        [TestMethod]
+        public void TestQuizSavingNegative()
+        {
+            int expectedValue = 25;
+            int actualValue;
+
+            int testUserId = 999;
+            String answersString = "0_1_0_0_1_0_1_2_";
+
+            _quizController.SaveQuizAnswers(testUserId, 3, answersString, 61, "Completed", 70);
+
+            actualValue = _quizController.GetQuizUserScore(testUserId, 3);
+
+            Assert.AreNotEqual(expectedValue, actualValue);
+
+        }
+
+        [TestMethod]
+        public void TestQuizDeletingProgressFromDBPositive()
+        {
+            bool expectedValue = true;
+            bool actualValue = false;
+
+            actualValue = _quizController.DeleteQuizProgress(999, 3);
+
+            Assert.AreEqual(expectedValue, actualValue);
+
+        }
+
+        [TestMethod]
+        public void TestQuizDeletingProgressFromDBPNegative()
+        {
+            bool expectedValue = true;
+            bool actualValue = false;
+
+            actualValue = _quizController.DeleteQuizProgress(999, 42);
+
+            Assert.AreNotEqual(expectedValue, actualValue);
+
         }
     }
 }

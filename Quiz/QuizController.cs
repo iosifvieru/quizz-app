@@ -1,4 +1,26 @@
-﻿using proiect_ip.Database;
+﻿/**************************************************************************
+ *                                                                        *
+ *  File:        Quiz.cs                                                  *
+ *  Copyright:   (c) 2024, Vieru Iosif,                                   *
+ *                         Georgita Adrian,                               *
+ *                         Talida Caraman,                                *
+ *                         Pricop Matei-Ioan                              *
+ *  E-mail:      iosif.vieru@student.tuiasi.ro,                           *
+ *               adrian.georgita@student.tuiasi.ro,                       *
+ *               talida.caraman@student.tuiasi.ro,                        *
+ *               matei-ioan.pricop@student.tuiasi.ro                      *
+ *  Description: QuizController                                           *
+ *                                                                        *
+ *  This program is free software; you can redistribute it and/or modify  *
+ *  it under the terms of the GNU General Public License as published by  *
+ *  the Free Software Foundation. This program is distributed in the      *
+ *  hope that it will be useful, but WITHOUT ANY WARRANTY; without even   *
+ *  the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR   *
+ *  PURPOSE. See the GNU General Public License for more details.         *
+ *                                                                        *
+ **************************************************************************/
+
+using proiect_ip.Database;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -375,11 +397,13 @@ namespace proiect_ip.Quiz
         /// <returns>True daca a fost salvat cu succes si false in caz contrar.</returns>
         public bool SaveQuizAnswers(int userId, int quizId, String answers, int time, String status, int score)
         {
+
             string query = "SELECT * FROM userAnswer WHERE userId='" + userId + "' AND quizId='" + quizId  + "';";
             DataTable result = _database.ExecuteQuery(query);
             if(result.Rows.Count > 0)
             {;
-                query = "UPDATE userAnswer SET status='" + status + "', time='" + time + "', answers='" + answers + "', score='" + score + "' WHERE userId='" + userId + "' AND quizId='" + quizId + "'';";
+
+                query = "UPDATE userAnswer SET status='" + status + "', time='" + time + "', answers='" + answers + "', score='" + score + "' WHERE userId='" + userId + "' AND quizId='" + quizId + "';";
                 if (_database.ExecuteNonQuery(query) > 0)
                     return true;
             }
