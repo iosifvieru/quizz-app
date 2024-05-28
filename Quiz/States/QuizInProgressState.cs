@@ -151,6 +151,7 @@ namespace proiect_ip.Quiz.States
                 else if (quizQuestions.Count == 0)
                     throw new Exception("Quiz-ul nu are intrebari!");
             }
+
             _quizController.SaveQuizAnswers(_quiz.UserId, _quiz.GetQuizId, answersString, _quiz.GetQuizTime, "Completed", score);
             _quiz.SetState(new QuizCompletedState());
             _quizForm.Close();

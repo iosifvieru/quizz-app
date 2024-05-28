@@ -397,11 +397,13 @@ namespace proiect_ip.Quiz
         /// <returns>True daca a fost salvat cu succes si false in caz contrar.</returns>
         public bool SaveQuizAnswers(int userId, int quizId, String answers, int time, String status, int score)
         {
+
             string query = "SELECT * FROM userAnswer WHERE userId='" + userId + "' AND quizId='" + quizId  + "';";
             DataTable result = _database.ExecuteQuery(query);
             if(result.Rows.Count > 0)
             {;
-                query = "UPDATE userAnswer SET status='" + status + "', time='" + time + "', answers='" + answers + "', score='" + score + "' WHERE userId='" + userId + "' AND quizId='" + quizId + "'';";
+
+                query = "UPDATE userAnswer SET status='" + status + "', time='" + time + "', answers='" + answers + "', score='" + score + "' WHERE userId='" + userId + "' AND quizId='" + quizId + "';";
                 if (_database.ExecuteNonQuery(query) > 0)
                     return true;
             }
