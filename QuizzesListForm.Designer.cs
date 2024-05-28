@@ -39,7 +39,7 @@
             this.bunifuLabel4 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.buttonAdmin = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
-            this.labelQuizDuration = new Bunifu.UI.WinForms.BunifuLabel();
+            this.labelQuizStatus = new Bunifu.UI.WinForms.BunifuLabel();
             this.labelQuizQuestions = new Bunifu.UI.WinForms.BunifuLabel();
             this.labelQuizTitle = new Bunifu.UI.WinForms.BunifuLabel();
             this.listViewQuizes = new System.Windows.Forms.ListView();
@@ -121,7 +121,7 @@
             this.bunifuPanel1.BorderRadius = 3;
             this.bunifuPanel1.BorderThickness = 1;
             this.bunifuPanel1.Controls.Add(this.buttonAdmin);
-            this.bunifuPanel1.Controls.Add(this.labelQuizDuration);
+            this.bunifuPanel1.Controls.Add(this.labelQuizStatus);
             this.bunifuPanel1.Controls.Add(this.labelQuizQuestions);
             this.bunifuPanel1.Controls.Add(this.labelQuizTitle);
             this.bunifuPanel1.Controls.Add(this.listViewQuizes);
@@ -225,21 +225,21 @@
             this.buttonAdmin.UseDefaultRadiusAndThickness = true;
             this.buttonAdmin.Click += new System.EventHandler(this.butonAdmin_Click);
             // 
-            // labelQuizDuration
+            // labelQuizStatus
             // 
-            this.labelQuizDuration.AllowParentOverrides = false;
-            this.labelQuizDuration.AutoEllipsis = false;
-            this.labelQuizDuration.CursorType = null;
-            this.labelQuizDuration.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelQuizDuration.ForeColor = System.Drawing.Color.White;
-            this.labelQuizDuration.Location = new System.Drawing.Point(138, 515);
-            this.labelQuizDuration.Name = "labelQuizDuration";
-            this.labelQuizDuration.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.labelQuizDuration.Size = new System.Drawing.Size(172, 30);
-            this.labelQuizDuration.TabIndex = 12;
-            this.labelQuizDuration.Text = "Duration: {x} : {y}";
-            this.labelQuizDuration.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.labelQuizDuration.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.labelQuizStatus.AllowParentOverrides = false;
+            this.labelQuizStatus.AutoEllipsis = false;
+            this.labelQuizStatus.CursorType = null;
+            this.labelQuizStatus.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelQuizStatus.ForeColor = System.Drawing.Color.White;
+            this.labelQuizStatus.Location = new System.Drawing.Point(138, 515);
+            this.labelQuizStatus.Name = "labelQuizStatus";
+            this.labelQuizStatus.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.labelQuizStatus.Size = new System.Drawing.Size(172, 30);
+            this.labelQuizStatus.TabIndex = 12;
+            this.labelQuizStatus.Text = "Status: Not Started";
+            this.labelQuizStatus.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.labelQuizStatus.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // labelQuizQuestions
             // 
@@ -511,7 +511,7 @@
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
         private Bunifu.UI.WinForms.BunifuLabel labelTitle;
         private System.Windows.Forms.ListView listViewQuizes;
-        private Bunifu.UI.WinForms.BunifuLabel labelQuizDuration;
+        private Bunifu.UI.WinForms.BunifuLabel labelQuizStatus;
         private Bunifu.UI.WinForms.BunifuLabel labelQuizQuestions;
         private Bunifu.UI.WinForms.BunifuLabel labelQuizTitle;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton2 buttonAdmin;

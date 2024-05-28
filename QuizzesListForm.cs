@@ -61,11 +61,11 @@ namespace proiect_ip
             listViewQuizes.GridLines = true;
             listViewQuizes.MultiSelect = false;
 
-            listViewQuizes.Columns.Add("Quiz Name", 250);
-            listViewQuizes.Columns.Add("Questions", 100);
+            listViewQuizes.Columns.Add("Quiz", 250);
+            listViewQuizes.Columns.Add("Întrebări", 100);
             listViewQuizes.Columns.Add("Status", 100);
-            listViewQuizes.Columns.Add("Score", 100);
-            listViewQuizes.Columns.Add("Your Time", 100);
+            listViewQuizes.Columns.Add("Scor", 100);
+            listViewQuizes.Columns.Add("Timpul tău", 100);
 
             foreach (Quiz.Quiz quiz in  _quizzes)
             {
@@ -100,6 +100,10 @@ namespace proiect_ip
             this.Controls.Add(listViewQuizes);
             this.listViewQuizes.BringToFront();
 
+            labelQuizTitle.Visible = false;
+            labelQuizQuestions.Visible = false;
+            labelQuizStatus.Visible = false;
+
             listViewQuizes.SelectedIndexChanged += ListView_SelectedIndexChanged;
         }
 
@@ -112,7 +116,12 @@ namespace proiect_ip
                 _selectedItem = listView.SelectedItems[0];
 
                 labelQuizTitle.Text = "Quiz: " + _selectedItem.Text;
-                labelQuizQuestions.Text = "Questions: " + _selectedItem.SubItems[1].Text;
+                labelQuizQuestions.Text = "Întrebări: " + _selectedItem.SubItems[1].Text;
+                labelQuizStatus.Text = "Status: " + _selectedItem.SubItems[2].Text;
+
+                labelQuizTitle.Visible = true;
+                labelQuizQuestions.Visible = true;
+                labelQuizStatus.Visible = true;
             }
         }
 
