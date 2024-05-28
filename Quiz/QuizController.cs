@@ -379,7 +379,7 @@ namespace proiect_ip.Quiz
             DataTable result = _database.ExecuteQuery(query);
             if(result.Rows.Count > 0)
             {;
-                query = "UPDATE userAnswer SET status='" + status + "', time='" + time + "', answers='" + answers + "', score='" + score + "';";
+                query = "UPDATE userAnswer SET status='" + status + "', time='" + time + "', answers='" + answers + "', score='" + score + "' WHERE userId='" + userId + "' AND quizId='" + quizId + "'';";
                 if (_database.ExecuteNonQuery(query) > 0)
                     return true;
             }
