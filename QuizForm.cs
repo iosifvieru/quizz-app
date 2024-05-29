@@ -81,5 +81,10 @@ namespace proiect_ip
             base.OnFormClosing(e);
             _quiz.CloseQuiz();
         }
+
+        private void bunifuButtonHelp_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("Prep4AutomaticaHelp.chm");
+        }
     }
 }

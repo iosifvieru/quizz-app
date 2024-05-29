@@ -92,5 +92,10 @@ namespace proiect_ip
             this.Hide();
             mainMenuForm.Show();
         }
+
+        private void bunifuButtonHelp_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("Prep4AutomaticaHelp.chm");
+        }
     }
 }

@@ -183,5 +183,10 @@ namespace proiect_ip
 
             return $"{minute:D2}:{secunde:D2}";
         }
+
+        private void bunifuButtonHelp_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("Prep4AutomaticaHelp.chm");
+        }
     }
 }

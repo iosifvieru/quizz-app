@@ -273,5 +273,10 @@ namespace proiect_ip
 
             RefreshListView();
         }
+
+        private void bunifuButtonHelp_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("Prep4AutomaticaHelp.chm");
+        }
     }
 }

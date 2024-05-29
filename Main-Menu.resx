@@ -184,6 +184,26 @@
         m2MnADjd/Lzm5bBx93W/VAcAzrXE5e7942pNi5mZ2aU3DL8iqvkHYGg4qgAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="bunifuButtonHelp.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMuSURBVFhH5ZgtbBtBEIUNAwsNAwMNDQ0NAwMNAw0DzQID
+        AwMDCwMDCwNTtZHSSm2s/ilt1dZVW9/2e7vj23Oyd3Kcu3OlPunJ9t3OzPPs7ezcdv4bOOcGd/jEbrUP
+        BYejLMtO4YzvpeD+ORzzddvMm4OCEOypj1yENH4/X+bvqd2MkFg+BuauPuC0i/NjH2WBr+ic7jt3te3c
+        JUNSfEGi3+459+XUuT+3ZuiF6k/umPvHAUc9HMZ0fDoKgVOCqiibD5OQbYBPfdm1MOsBJ3vZfP7Te5xd
+        VGdrVb7shoxGTCzcwyBx5iA4fL6VDrgu3x+Yc5/NIwu7GjDo55nTtKQC1ME3uz6EoIRY+GowVgsiPHPK
+        XMpxnXynChSeSSXGZJSDQSfe4sez+qe1jPZMEvvCZKTBmJ4fOWeB6WFOOWuCSkSsm+Urm38QirBKScpR
+        k4xTfc3HlkmK4CI1BKigrlPnHktlUaUMIHJosiK4yLYA2lgYZVTFAGg5NlkRXDzzd29GaeM2eB2WAFqm
+        Jisir3ubmN4if+kR9OiZtMLzp5spozYZt8G4mvmhBjO0SSmjNqkKApjmscnzAnnwwGdqdMqoTdoejcC4
+        P/MjrOB/QaB6TICmuJL5MfRXv7GQU0Zt8uOhlwIOTJ6f4h1/SYUyZdQmNYuApMXuht/UFqBdpK0GoYxq
+        UgKW311QfOkvv2ZBpwzboBoUgBa9Dizvx1wI+8wmGoUFtYsBBJ6ZrAgu9v1dtT2bmmYt0oCRyVpGPs1q
+        fVIOmmTchzW9XZO0DG6El4RNZDG2WtUvUAwII1WPUo6aYHz21Fbfb1aLYEDYlwWdCqQc1slXfZfNZ5nC
+        IXDfZFSDgaH/1rsJDpKO66AOAuxdhJj3m9QqyMBbSmQTmdSiiOJUnaun9i5kgGHenNVaH/nDhWmVuPXP
+        EjGOZxRqaHUakAq6CpU19ZwGxGnjfVjmUsDREOa9uA+itmiVd+fFEZyO6wz4uoWxIa0D+NWUj+U8hDGo
+        fmn69UYm0RKj72IhWwK2Ot5Qy9zc8bCcw5WOfxdg3OIYOL1DNAmCDgiuNnjC5wnUwtJ3CdrsYXrz6HT+
+        AmfMkB/u0NkEAAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="bunifuTextBoxMainPassword.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

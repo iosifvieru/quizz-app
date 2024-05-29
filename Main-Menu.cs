@@ -139,5 +139,10 @@ namespace proiect_ip
             this.Hide();
             registerForm.Show();
         }
+
+        private void bunifuButton21_Click_1(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("Prep4AutomaticaHelp.chm");
+        }
     }
 }
